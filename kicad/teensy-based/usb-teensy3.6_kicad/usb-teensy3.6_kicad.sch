@@ -5,7 +5,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "hs-lr-midi-schwurbler - usb-teensy3.6"
+Title "Der Schwurbler - usb-teensy3.6"
 Date "2020-07-30"
 Rev "0.1"
 Comp "Happy Shooting Community - DIY Lightroom Hardware Controller"
@@ -449,28 +449,6 @@ Wire Wire Line
 	6150 3450 6150 3700
 Connection ~ 7100 3150
 $Comp
-L HappyShooting:HSLogo Logo2
-U 1 1 5F2708FF
-P 1050 850
-F 0 "Logo2" H 1050 558 60  0001 C CNN
-F 1 "HSLogo" H 1050 1142 60  0001 C CNN
-F 2 "" H 1050 850 50  0001 C CNN
-F 3 "" H 1050 850 50  0001 C CNN
-	1    1050 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L HappyShooting:LogoText LogoText1
-U 1 1 5F2734A7
-P 3150 1050
-F 0 "LogoText1" H 3150 445 60  0001 C CNN
-F 1 "LogoText" H 3150 1655 60  0001 C CNN
-F 2 "" H 3150 1050 50  0001 C CNN
-F 3 "" H 3150 1050 50  0001 C CNN
-	1    3150 1050
-	1    0    0    -1  
-$EndComp
-$Comp
 L HappyShooting:Teensy3.6 U1
 U 1 1 5F285852
 P 4550 5050
@@ -480,6 +458,50 @@ F 2 "HappyShooting:Teensy36" H 4550 7577 60  0000 C CNN
 F 3 "https://www.pjrc.com/teensy/card9a_rev1.pdf" H 4550 7471 60  0000 C CNN
 F 4 "https://www.pjrc.com/teensy/card9b_rev1.pdf" H 4550 7373 50  0000 C CNN "Datenblatt2"
 	1    4550 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L HappyShooting:DIY diy?
+U 1 1 5F26AD51
+P 4400 950
+F 0 "diy?" H 4400 491 60  0001 C CNN
+F 1 "DIY" H 4400 1409 60  0001 C CNN
+F 2 "" H 4400 950 50  0001 C CNN
+F 3 "" H 4400 950 50  0001 C CNN
+	1    4400 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L HappyShooting:HSC_LOGO_Supersmall HSC_Logo_sm?
+U 1 1 5F271FB8
+P 1000 900
+F 0 "HSC_Logo_sm?" H 1000 599 60  0001 C CNN
+F 1 "HSC_LOGO_Supersmall" H 1000 1201 60  0001 C CNN
+F 2 "" H 1000 900 50  0001 C CNN
+F 3 "" H 1000 900 50  0001 C CNN
+	1    1000 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L HappyShooting:QR_small QR_small?
+U 1 1 5F28BA9C
+P 9450 1100
+F 0 "QR_small?" H 9450 910 60  0001 C CNN
+F 1 "QR_small" H 9450 1290 60  0001 C CNN
+F 2 "" H 9450 1100 50  0001 C CNN
+F 3 "" H 9450 1100 50  0001 C CNN
+	1    9450 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L HappyShooting:help_small help_small?
+U 1 1 5F2972E5
+P 10400 1100
+F 0 "help_small?" H 10400 850 60  0001 C CNN
+F 1 "help_small" H 10400 1350 60  0001 C CNN
+F 2 "" H 10400 1100 50  0001 C CNN
+F 3 "" H 10400 1100 50  0001 C CNN
+	1    10400 1100
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
