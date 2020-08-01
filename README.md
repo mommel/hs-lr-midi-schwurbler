@@ -1,6 +1,6 @@
 # hs-lr-midi-schwurbler
 Happy Shooting Community - DIY Lightroom Hardware Controller
-
+![Render with Parts](pcb/teensy-based/usb-teensy3.6/usb-teensy3.6_oben.jpg)
 ## Description
 The german foto podcast legend Happy Shooting had a discussion about Midi controller for Lightroom. One comment on the website and voila a new project is born.
 This project will (hopefully) contain everything from zero to hero to get create your own customized Midi Controller for Lightroom.
@@ -26,7 +26,7 @@ It's just a very first glympse, and totally work in progress.
 ### PCB
  Consits of Gerber, Etching and Renders
  They can be used to order pcbs from a manufactorer
-![PCB Rendering](pcb/teensy-based/usb-teensy3.6/usb-teensy3.6_oben.jpg)
+![PCB Rendering](pcb/teensy-based/usb-teensy3.6/usb-teensy3.6.jpg)
 
 ### Prototyping
  Consits of [Fritzing](https://fritzing.org/) files that can be easly recreated on a breadboard.
