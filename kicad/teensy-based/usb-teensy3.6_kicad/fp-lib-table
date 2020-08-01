@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name HappyShooting)(type KiCad)(uri ${KIPRJMOD}/Footprints/hs.pretty)(options "")(descr ""))
+  (lib (name HappyShooting3D)(type KiCad)(uri ${KIPRJMOD}/Footprints/3dshapes)(options "")(descr ""))
+)

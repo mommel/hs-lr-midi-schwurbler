@@ -1,0 +1,11 @@
+# Dont ignore
+!.gitkeep
+
+# Ignore
+**/.DS_Store
+circuit diagram/**/*bak
+*.sch-bak
+*.kicad_pcb-bak
+/kicad/**/*kicad-rescue.*
+/kicad/**/*-cache
+/kicad/**/*cache.lib
