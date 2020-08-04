@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.4-0-10_14)"
     },
-    "CreationDate":  "2020-08-04T18:42:11+02:00"
+    "CreationDate":  "2020-08-04T22:12:36+02:00"
   },
   "GeneralSpecs":
   {
@@ -19,8 +19,8 @@
     },
     "Size":
     {
-      "X": 155.040,
-      "Y": 90.270
+      "X": 0.000,
+      "Y": 0.000
     },
     "LayerNumber": 2,
     "BoardThickness":  1.600
@@ -47,6 +47,16 @@
     {
       "Path":  "usb-teensy3.6_kicad-B_Cu.gbr",
       "FileFunction":  "Copper,L2,Bot",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "usb-teensy3.6_kicad-F_Adhes.gbr",
+      "FileFunction":  "Glue,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "usb-teensy3.6_kicad-B_Adhes.gbr",
+      "FileFunction":  "Glue,Bot",
       "FilePolarity":  "Positive"
     },
     {
