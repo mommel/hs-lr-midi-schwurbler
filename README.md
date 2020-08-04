@@ -66,7 +66,8 @@ Still don't know how you can contribute but want to. Maybe you are the human bei
 ## Help needed? F.A.Q.
 * For support you can open an issue here on github.
 * Maybe there will be a slack contact in the future.
-* *Please respect* that this project is a Happy Shooting _Community_ Project. Boris and Chris are not a support channel, for this project. The community will do its best to hopefully solve your issue.
+* This project is a Happy Shooting _Community_ Project. 
+The best way to get help is joining the #der-schwurbler channel on the happyshooting slack. The community will do it's best and hopefully solve your issue.
 * No hotline, no helpdesk. But we have something even greater: The Happy Shooting _Community_.    
 
 ## How to contribute
