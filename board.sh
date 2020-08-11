@@ -107,6 +107,7 @@ function switchBranch {
     git checkout "$branchname"
     echo "Applying changes from stash"
     git stash pop
+  fi
 }
 
 function add2gitPush {
@@ -115,7 +116,7 @@ function add2gitPush {
   echo -e "You have the rights to push to this repo? \nYES: (y/Y) -- NO: (every other key)"
   read -n 1 pushYES
   case "$pushYES" in
-    y|Y) git push origin ${ACTIVEBRANCH}
+    y|Y) git push origin ${ACTIVEBRANCH};;
     *) echo "Ok you need to do a git push to send your changes to a server.\n Become a collaborator or fork the project and push to your forked origin." ;;
   esac
 }
