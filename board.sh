@@ -165,16 +165,76 @@ function showHelp {
 
 function packBoard {
   echo -e "Create board Package\n"
-  echo -e "Not implemented yet"
-  echo "* Board Selection needs to be implemented here"
-  echo "* Gather all files matching and pack afterwards"
-  exit 23
+  local boardNames
+  for folderName in "${BOARDFOLDER[@]}"
+  do
+      local teensy=$(ls -d "${ROOTFOLDER}/${folderName}/teensy-based/")
+      local esp32=$(ls -d "${ROOTFOLDER}/${folderName}/esp32-based/")
+      local esp8266=$(ls -d "${ROOTFOLDER}/${folderName}/esp8266-based/")
+      local unknown=$(ls -d "${ROOTFOLDER}/${folderName}/unknown/")
+      OLDIFS="$IFS"
+      IFS=$'\n'
+      combined=(`for boardName in "${boardNames[@]}" "${teensy[@]}" "${esp32[@]}" "${esp8266[@]}" "${unknown[@]}"; do echo "$boardName" ; done | sort -du`)
+      IFS="$OLDIFS"
+      boardNames=combined
+  done
+  local i=0
+  for boardName in "${boardNames[@]}"
+  do
+    echo -e "${i}) ${boardName}\n"
+    i=$((i+1))
+  done
+  i=$((i-1))
+  echo -e "\n\n"
+  echo -e "Type the number of the board followed by the enter key"
+  read -p 'No: 'boardId
+  until [[ $boardId =~ ^[+]?[0-9]{1-5}+$ ]]
+  do
+    echo "Not an id of a board - Try again!"
+    echo
+    read -p 'No: 'boardId
+  done
+  [ $boardId -lt 0 ] && echo "Not an id of a board" && exit 15
+  [ $boardId -gt i ] && echo "Not an id of a board" && exit 16 
+  local selectedBoard=${boardNames[$boardId]}
+  local packfolder="${ROOTFOLDER}/boardPacks/${selectedBoard}"
+  echo "Packing Board: $selectedBoard"
+  mkdir -p "${packfolder}"
+  for folderName in "${BOARDFOLDER[@]}"
+  do
+    cp -r "${ROOTFOLDER}/${folderName}/teensy-based/${selectedBoard}/" "${packfolder}"
+    cp -r "${ROOTFOLDER}/${folderName}/esp32-based/${selectedBoard}/" "${packfolder}"
+    cp -r "${ROOTFOLDER}/${folderName}/esp8266-based/${selectedBoard}/" "${packfolder}"
+    cp -r "${ROOTFOLDER}/${folderName}/unknown/${selectedBoard}/" "${packfolder}"
+  done
+  if [ -f "${packfolder}.7z" ]
+  then
+    rm "${packfolder}.7z"
+  fi
+  7z a "${packfolder}.7z" "${packfolder}/"
+  if [ $? -ne 0 ]; then
+    if [ "${packfolder}" != "" ]
+    then 
+      rm -rf "${packfolder}"
+    fi
+    echo "Packing files with 7zip failed"
+    exit 17  
+  fi
+  if [ "${packfolder}" != "" ]
+  then 
+    rm -rf "${packfolder}"
+  fi
+  echo "You can find your boardPack here: boardPacks/${packfolder}.7z"
+  exit 0
 }
 
 function pullBranch {
-  echo -e "Pull latest changes from origin for ${ACTIVEBRANCH}"
-  echo -e "Not implemented yet"
-  echo "* Git rebase will be implemented here"
+  echo -e "Pull latest changes from origin for ${ACTIVEBRANCH}\n"
+  echo -e "Stashing changes\n"
+  git stash --include-untracked
+  git pull --rebase origin ${ACTIVEBRANCH}
+  echo "Applying changes from stash"
+  git stash pop
 }
 
 function showIncorrect {
