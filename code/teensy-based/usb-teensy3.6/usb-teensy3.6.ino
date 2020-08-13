@@ -1,6 +1,7 @@
 #include <MIDI.h>
 #include <ResponsiveAnalogRead.h>
-#include <Bounce.h> 
+#include <Bounce.h>
+# define arrayCount(x) (sizeof (x) / sizeof (x)[0])
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 // Dont forget the Interrupts
@@ -48,11 +49,11 @@ Bounce digitalButtonController[] =   {
 void setup()
 {
     MIDI.begin(midiChannel);
-    while( potiControllerPin.length != amountOfPotiControllerInputs ){ // || potiControllerValues.length != amountOfPotiControllerInputs){
+    while( arrayCount(potiControllerPin) != amountOfPotiControllerInputs ){ // || arrayCount(potiControllerValues) != amountOfPotiControllerInputs){
       if( !Serial ) {
         Serial.begin(9600);
       }
-      Serial.println('Error Controller Pin Values Amount mismatch');
+      Serial.println("Error Controller Pin Values Amount mismatch");
       delay(2000);
     }
     for (int digitalControllerID = 0; digitalControllerID < amountOfDigitalButtonController; digitalControllerID++) {
@@ -68,7 +69,7 @@ void getPotiData(){
       // map(analogRead(controllerPin[ controllerID ]),0,1023,0,127);
       if (potiData[potiControllerID] != potiDataLag[potiControllerID]){
         potiDataLag[potiControllerID] = potiData[potiControllerID];
-        usbMIDI.sendControlChange(CCID[potiControllerID], potiData[potiControllerID], channel);
+        usbMIDI.sendControlChange(CCID[potiControllerID], potiData[potiControllerID], midiChannel);
       }
     }
   }
@@ -78,11 +79,11 @@ void getButtonData(){
   for ( int buttonControllerId = 0; buttonControllerId < amountOfDigitalButtonController; buttonControllerId++ ) {
     digitalButtonController[buttonControllerId].update();
     if (digitalButtonController[buttonControllerId].fallingEdge()) {
-      usbMIDI.sendNoteOn(note[buttonControllerId], ON_VELOCITY, channel);  
+      usbMIDI.sendNoteOn(note[buttonControllerId], ON_VELOCITY, midiChannel);  
     }
     // Note Off messages when each button is released
     if (digitalButtonController[buttonControllerId].risingEdge()) {
-      usbMIDI.sendNoteOff(note[buttonControllerId], 0, channel);  
+      usbMIDI.sendNoteOff(note[buttonControllerId], 0, midiChannel);  
     }
   }
 }
