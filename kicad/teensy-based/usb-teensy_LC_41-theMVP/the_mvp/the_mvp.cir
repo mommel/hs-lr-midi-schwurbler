@@ -1,0 +1,26 @@
+.title KiCad schematic
+OB1 GND Net-_MCU1-Pad2_ optional monumentary switch Buttons
+OB2 GND Net-_MCU1-Pad3_ monumentary switch Button
+OB4 GND Net-_MCU1-Pad5_ monumentary switch Button
+OB3 GND Net-_MCU1-Pad4_ monumentary switch Button
+RE3 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad43_ 10k
+RE4 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad42_ 10k
+RE5 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad41_ 10k
+RE6 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad40_ 10k
+RE7 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad39_ 10k
+RE8 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad38_ 10k
+RE2 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad44_ 10k
+RE9 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad37_ 10k
+B1 GND Net-_B1-Pad2_ monumentary switch Buttons
+B2 GND Net-_B2-Pad2_ monumentary switch Buttons
+B3 GND Net-_B3-Pad2_ monumentary switch Buttons
+B5 GND Net-_B5-Pad2_ monumentary switch Buttons
+B6 GND Net-_B6-Pad2_ monumentary switch Buttons
+B4 GND Net-_B4-Pad2_ monumentary switch Buttons
+B7 GND Net-_B7-Pad2_ monumentary switch Buttons
+B8 GND Net-_B8-Pad2_ monumentary switch Buttons
+B9 GND Net-_B9-Pad2_ monumentary switch Buttons
+B10 GND Net-_B10-Pad2_ monumentary switch Buttons
+RE1 Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ Net-_MCU1-Pad45_ 10k
+MCU1 GND Net-_MCU1-Pad2_ Net-_MCU1-Pad3_ Net-_MCU1-Pad4_ Net-_MCU1-Pad5_ Net-_B1-Pad2_ Net-_B2-Pad2_ Net-_B3-Pad2_ Net-_B4-Pad2_ Net-_B5-Pad2_ Net-_B6-Pad2_ Net-_B7-Pad2_ Net-_B8-Pad2_ Net-_B9-Pad2_ NC_01 NC_02 NC_03 NC_04 NC_05 NC_06 NC_07 NC_08 NC_09 NC_10 NC_11 NC_12 NC_13 NC_14 NC_15 NC_16 NC_17 NC_18 NC_19 NC_20 NC_21 Net-_B10-Pad2_ Net-_MCU1-Pad37_ Net-_MCU1-Pad38_ Net-_MCU1-Pad39_ Net-_MCU1-Pad40_ Net-_MCU1-Pad41_ Net-_MCU1-Pad42_ Net-_MCU1-Pad43_ Net-_MCU1-Pad44_ Net-_MCU1-Pad45_ Net-_MCU1-Pad46_ Net-_MCU1-Pad47_ NC_22 NC_23 NC_24 NC_25 NC_26 NC_27 NC_28 NC_29 NC_30 NC_31 NC_32 NC_33 NC_34 NC_35 NC_36 NC_37 NC_38 NC_39 NC_40 NC_41 Teensy4.1
+.end
