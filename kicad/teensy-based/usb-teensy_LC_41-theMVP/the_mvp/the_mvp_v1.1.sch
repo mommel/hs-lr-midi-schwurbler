@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:the_mvp_v1.1-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -297,7 +298,7 @@ F 1 "10k" H 3480 1255 50  0000 L CNN
 F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 1460 50  0001 C CNN
 F 3 "~" H 3250 1560 50  0001 C CNN
 	1    3250 1300
-	1    0    0    -1  
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	1250 1450 1250 2100
@@ -441,7 +442,7 @@ Wire Wire Line
 Wire Wire Line
 	2400 1200 2400 1000
 Wire Wire Line
-	2400 1000 4250 1000
+	2400 1000 3150 1000
 Wire Wire Line
 	4250 1000 4250 1200
 Connection ~ 2400 1200
@@ -736,4 +737,6 @@ Wire Wire Line
 	2300 7050 2300 6650
 Wire Wire Line
 	2200 6650 2200 6950
+Wire Wire Line
+	3350 1000 4250 1000
 $EndSCHEMATC

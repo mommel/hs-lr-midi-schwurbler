@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Schwurbler - MVP"
-Date "2020-08-23"
-Rev "1.0a"
+Date "2020-08-26"
+Rev "1.1a"
 Comp "Happy Shooting Community"
 Comment1 "USB - Teensy based  "
 Comment2 "Teensy LC, 3.2, 4.0"
@@ -63,7 +63,7 @@ U 1 1 5F42CE66
 P 3250 2300
 F 0 "RE3" H 3480 2346 50  0000 L CNN
 F 1 "10k" H 3480 2255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 3100 2460 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 2460 50  0001 C CNN
 F 3 "~" H 3250 2560 50  0001 C CNN
 	1    3250 2300
 	1    0    0    -1  
@@ -74,7 +74,7 @@ U 1 1 5F42D508
 P 3250 2800
 F 0 "RE4" H 3480 2846 50  0000 L CNN
 F 1 "10k" H 3480 2755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 3100 2960 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 2960 50  0001 C CNN
 F 3 "~" H 3250 3060 50  0001 C CNN
 	1    3250 2800
 	1    0    0    -1  
@@ -85,7 +85,7 @@ U 1 1 5F43012E
 P 4700 1300
 F 0 "RE5" H 4930 1346 50  0000 L CNN
 F 1 "10k" H 4930 1255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 4550 1460 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 1460 50  0001 C CNN
 F 3 "~" H 4700 1560 50  0001 C CNN
 	1    4700 1300
 	1    0    0    -1  
@@ -96,7 +96,7 @@ U 1 1 5F430DDF
 P 4700 1800
 F 0 "RE6" H 4930 1846 50  0000 L CNN
 F 1 "10k" H 4930 1755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 4550 1960 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 1960 50  0001 C CNN
 F 3 "~" H 4700 2060 50  0001 C CNN
 	1    4700 1800
 	1    0    0    -1  
@@ -107,7 +107,7 @@ U 1 1 5F4316E4
 P 4700 2300
 F 0 "RE7" H 4930 2346 50  0000 L CNN
 F 1 "10k" H 4930 2255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 4550 2460 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 2460 50  0001 C CNN
 F 3 "~" H 4700 2560 50  0001 C CNN
 	1    4700 2300
 	1    0    0    -1  
@@ -118,7 +118,7 @@ U 1 1 5F43285B
 P 4700 2800
 F 0 "RE8" H 4930 2846 50  0000 L CNN
 F 1 "10k" H 4930 2755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 4550 2960 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 2960 50  0001 C CNN
 F 3 "~" H 4700 3060 50  0001 C CNN
 	1    4700 2800
 	1    0    0    -1  
@@ -129,7 +129,7 @@ U 1 1 5F42C1B5
 P 3250 1800
 F 0 "RE2" H 3480 1846 50  0000 L CNN
 F 1 "10k" H 3480 1755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 3100 1960 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 1960 50  0001 C CNN
 F 3 "~" H 3250 2060 50  0001 C CNN
 	1    3250 1800
 	1    0    0    -1  
@@ -140,7 +140,7 @@ U 1 1 5F44C127
 P 7300 3850
 F 0 "RE9" H 7530 3896 50  0000 L CNN
 F 1 "10k" H 7530 3805 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 7150 4010 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 7150 4010 50  0001 C CNN
 F 3 "~" H 7300 4110 50  0001 C CNN
 	1    7300 3850
 	1    0    0    -1  
@@ -294,7 +294,7 @@ U 1 1 5F42B097
 P 3250 1300
 F 0 "RE1" H 3480 1346 50  0000 L CNN
 F 1 "10k" H 3480 1255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 3100 1460 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 1460 50  0001 C CNN
 F 3 "~" H 3250 1560 50  0001 C CNN
 	1    3250 1300
 	1    0    0    -1  
