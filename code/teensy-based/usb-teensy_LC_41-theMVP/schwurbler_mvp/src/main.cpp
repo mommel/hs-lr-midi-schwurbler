@@ -3,18 +3,22 @@
 
 #include <Arduino.h>
 #include <MIDI.h>
-#include <ResponsiveAnalogRead.h>
-#ifdef ESP32 // YAGNI - I KNOW
-// #include <AppleMIDI.h>
-#endif
 #include <Bounce2.h>
-
 #define arrayCount(x) (sizeof (x) / sizeof (x)[0])
 
+#ifdef TEENSY
+
+#include <ResponsiveAnalogRead.h>
+MIDI_CREATE_INSTANCE(HardwareSerial, Serial2, MIDI);
+
+#endif
+
 #ifdef ESP32 // YAGNI - I KNOW
-APPLEMIDI_CREATE_DEFAULTSESSION_ESP32_INSTANCE();
-#else
-MIDI_CREATE_DEFAULT_INSTANCE()
+
+// rtpMIDI
+// #include <AppleMIDI.h>
+// APPLEMIDI_CREATE_DEFAULTSESSION_ESP32_INSTANCE();
+
 #endif
 
 const int midiChannel = 3;
@@ -34,8 +38,8 @@ const int ON_VELOCITY = 99;
   const int buttonControllerPin[amountOfDigitalButtonController] = {0, 1 /*, 2, 3, 4, 5, 6 ,7,8, 9, 10, 11, 12, 14*/}; 
 #endif
 
-const int CCID[amountOfPotiControllerInputs] = {21, 22, 23, 24, 25, 26, 27, 28, 29};
-const int note[amountOfDigitalButtonController] = {60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73};
+const int controlNumbersAnalog[amountOfPotiControllerInputs] = {21, 22, 23, 24, 25, 26, 27, 28, 29};
+const int controlNumbersDigital[amountOfDigitalButtonController] = {60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73};
 const int BOUNCE_TIME = 7;
 const boolean toggled = true;
 
@@ -75,7 +79,12 @@ Bounce digitalButtonController[] =   {
 void setup()
 {
     MIDI.begin(midiChannel);
-    while( arrayCount(potiControllerPin) != amountOfPotiControllerInputs ){ // || arrayCount(potiControllerValues) != amountOfPotiControllerInputs){
+    while( 
+      arrayCount(potiControllerPin) != amountOfPotiControllerInputs || \
+      arrayCount(controlNumbersAnalog) != amountOfPotiControllerInputs || \
+      arrayCount(buttonControllerPin) != amountOfDigitalButtonController || \
+      arrayCount(controlNumbersDigital) != amountOfDigitalButtonController
+    ){
       if( !Serial ) {
         Serial.begin(9600);
       }
@@ -85,21 +94,56 @@ void setup()
     for (int digitalControllerID = 0; digitalControllerID < amountOfDigitalButtonController; digitalControllerID++) {
       pinMode(buttonControllerPin[digitalControllerID], INPUT_PULLUP);
     }
+    #ifdef LEDPIN
+    pinMode(LEDPIN, OUTPUT);
+    #endif
 }
+
+void sendMidiTrigger( int inControlNumber, boolean active = false, int sendChannelID = midiChannel) {
+  #ifdef LEDPIN
+  digitalWrite( LEDPIN, (active ? HIGH : LOW) );
+  #endif
+  #ifdef TEENSY
+    usbMIDI.sendControlChange( inControlNumber, (active ? ON_VELOCITY : 0 ), sendChannelID );
+  #else
+    // YAGNI - Send WIFI/BT HERE
+  #endif
+}
+
+void sendMidiValueChange( int inControlNumber, byte controllerValue, int sendChannelID = midiChannel) {
+  #ifdef TEENSY
+    usbMIDI.sendControlChange( inControlNumber, controllerValue, sendChannelID );
+  #else
+    // YAGNI - Send WIFI/BT HERE
+  #endif
+}
+
+#ifdef SIMULATE
+void runSimulationData() {
+  for ( int potiControllerID = 0; potiControllerID  < amountOfPotiControllerInputs; potiControllerID++ ) {
+    for ( uint32_t simVal = 0; simVal <= 102; simVal += 10 ) {
+      sendMidiValueChange(controlNumbersAnalog[potiControllerID], simVal);
+      delay (200);
+    }
+    delay(2000);
+  }
+  for ( int buttonControllerId = 0; buttonControllerId < amountOfDigitalButtonController; buttonControllerId++ ) {
+    sendMidiTrigger(controlNumbersDigital[buttonControllerId], true);
+    delay(600);
+    sendMidiTrigger(controlNumbersDigital[buttonControllerId]);
+    delay(1200);
+  }
+}
+#endif
 
 void getPotiData(){  
  for ( int potiControllerID = 0; potiControllerID  < amountOfPotiControllerInputs; potiControllerID++ ) {
     analogPotiController[potiControllerID].update(); 
     if(analogPotiController[potiControllerID].hasChanged()) {
       potiData[potiControllerID] = analogPotiController[potiControllerID].getValue()>>3;
-      // map(analogRead(controllerPin[ controllerID ]),0,1023,0,127);
       if (potiData[potiControllerID] != potiDataLag[potiControllerID]){
         potiDataLag[potiControllerID] = potiData[potiControllerID];
-        #ifndef ESP32
-        usbMIDI.sendControlChange(CCID[potiControllerID], potiData[potiControllerID], midiChannel);
-        #else
-        // YAGNI - Send WIFI/BT HERE
-        #endif
+        sendMidiValueChange(controlNumbersAnalog[potiControllerID], potiData[potiControllerID]);
       }
     }
   }
@@ -109,25 +153,20 @@ void getButtonData(){
   for ( int buttonControllerId = 0; buttonControllerId < amountOfDigitalButtonController; buttonControllerId++ ) {
     digitalButtonController[buttonControllerId].update();
     if (digitalButtonController[buttonControllerId].fallingEdge()) {
-      #ifndef ESP32
-      usbMIDI.sendNoteOn(note[buttonControllerId], ON_VELOCITY, midiChannel);  
-      #else
-      // YAGNI - Send WIFI/BT HERE
-      #endif
+      sendMidiTrigger(controlNumbersDigital[buttonControllerId], true);
     }
-    // Note Off messages when each button is released
     if (digitalButtonController[buttonControllerId].risingEdge()) {
-      #ifndef ESP32
-      usbMIDI.sendNoteOff(note[buttonControllerId], 0, midiChannel);
-      #else
-      // YAGNI - Send WIFI/BT HERE
-      #endif
+      sendMidiTrigger(controlNumbersDigital[buttonControllerId]);
     }
   }
 }
 
 void loop()
 {
-  getPotiData();
-  getButtonData();       
+  #ifdef SIMULATE
+    runSimulationData();
+  #else
+    getPotiData();
+    getButtonData();
+  #endif
 }

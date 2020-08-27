@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:the_mvp-shorts_v1.1-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -58,92 +59,48 @@ F 3 "~" H 1600 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Rotary_Encoder RE3
+L Device:R_POT RE3
 U 1 1 5F42CE66
-P 3250 2300
-F 0 "RE3" H 3480 2346 50  0000 L CNN
-F 1 "10k" H 3480 2255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 2460 50  0001 C CNN
-F 3 "~" H 3250 2560 50  0001 C CNN
-	1    3250 2300
-	1    0    0    -1  
+P 3100 2300
+F 0 "RE3" H 2900 2350 50  0000 L CNN
+F 1 "10k" H 2900 2250 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 2950 2460 50  0001 C CNN
+F 3 "~" H 3100 2560 50  0001 C CNN
+	1    3100 2300
+	-1   0    0    1   
 $EndComp
 $Comp
-L Device:Rotary_Encoder RE4
+L Device:R_POT RE4
 U 1 1 5F42D508
-P 3250 2800
-F 0 "RE4" H 3480 2846 50  0000 L CNN
-F 1 "10k" H 3480 2755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 2960 50  0001 C CNN
-F 3 "~" H 3250 3060 50  0001 C CNN
-	1    3250 2800
-	1    0    0    -1  
+P 3100 2800
+F 0 "RE4" H 2900 2850 50  0000 L CNN
+F 1 "10k" H 2900 2750 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 2950 2960 50  0001 C CNN
+F 3 "~" H 3100 3060 50  0001 C CNN
+	1    3100 2800
+	-1   0    0    1   
 $EndComp
 $Comp
-L Device:Rotary_Encoder RE5
-U 1 1 5F43012E
-P 4700 1300
-F 0 "RE5" H 4930 1346 50  0000 L CNN
-F 1 "10k" H 4930 1255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 1460 50  0001 C CNN
-F 3 "~" H 4700 1560 50  0001 C CNN
-	1    4700 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Rotary_Encoder RE6
-U 1 1 5F430DDF
-P 4700 1800
-F 0 "RE6" H 4930 1846 50  0000 L CNN
-F 1 "10k" H 4930 1755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 1960 50  0001 C CNN
-F 3 "~" H 4700 2060 50  0001 C CNN
-	1    4700 1800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Rotary_Encoder RE7
-U 1 1 5F4316E4
-P 4700 2300
-F 0 "RE7" H 4930 2346 50  0000 L CNN
-F 1 "10k" H 4930 2255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 2460 50  0001 C CNN
-F 3 "~" H 4700 2560 50  0001 C CNN
-	1    4700 2300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Rotary_Encoder RE8
-U 1 1 5F43285B
-P 4700 2800
-F 0 "RE8" H 4930 2846 50  0000 L CNN
-F 1 "10k" H 4930 2755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4550 2960 50  0001 C CNN
-F 3 "~" H 4700 3060 50  0001 C CNN
-	1    4700 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Rotary_Encoder RE2
+L Device:R_POT RE2
 U 1 1 5F42C1B5
-P 3250 1800
-F 0 "RE2" H 3480 1846 50  0000 L CNN
-F 1 "10k" H 3480 1755 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 1960 50  0001 C CNN
-F 3 "~" H 3250 2060 50  0001 C CNN
-	1    3250 1800
-	1    0    0    -1  
+P 3100 1800
+F 0 "RE2" H 2900 1850 50  0000 L CNN
+F 1 "10k" H 2900 1750 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 2950 1960 50  0001 C CNN
+F 3 "~" H 3100 2060 50  0001 C CNN
+	1    3100 1800
+	-1   0    0    1   
 $EndComp
 $Comp
-L Device:Rotary_Encoder RE9
+L Device:R_POT RE9
 U 1 1 5F44C127
 P 7300 3850
-F 0 "RE9" H 7530 3896 50  0000 L CNN
-F 1 "10k" H 7530 3805 50  0000 L CNN
+F 0 "RE9" H 7100 3900 50  0000 L CNN
+F 1 "10k" H 7100 3800 50  0000 L CNN
 F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 7150 4010 50  0001 C CNN
 F 3 "~" H 7300 4110 50  0001 C CNN
 	1    7300 3850
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L Switch:SW_Push B1
@@ -289,15 +246,15 @@ Wire Wire Line
 	5900 1350 5900 1900
 Connection ~ 5900 1900
 $Comp
-L Device:Rotary_Encoder RE1
+L Device:R_POT RE1
 U 1 1 5F42B097
-P 3250 1300
-F 0 "RE1" H 3480 1346 50  0000 L CNN
-F 1 "10k" H 3480 1255 50  0000 L CNN
-F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 3100 1460 50  0001 C CNN
-F 3 "~" H 3250 1560 50  0001 C CNN
-	1    3250 1300
-	1    0    0    -1  
+P 3100 1300
+F 0 "RE1" H 2900 1350 50  0000 L CNN
+F 1 "10k" H 2900 1250 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 2950 1460 50  0001 C CNN
+F 3 "~" H 3100 1560 50  0001 C CNN
+	1    3100 1300
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	1250 1450 1250 2100
@@ -315,18 +272,6 @@ Wire Wire Line
 Wire Wire Line
 	1250 3350 1400 3350
 Connection ~ 1250 2750
-Wire Wire Line
-	2950 2900 2900 2900
-Wire Wire Line
-	3650 3050 3650 2550
-Wire Wire Line
-	3650 2550 2900 2550
-Wire Wire Line
-	3650 2550 3650 2050
-Connection ~ 3650 2550
-Wire Wire Line
-	3650 2050 3650 1550
-Connection ~ 3650 2050
 $Comp
 L power:GND #PWR01
 U 1 1 5F491BDE
@@ -352,68 +297,8 @@ $EndComp
 Wire Wire Line
 	8000 3900 8000 4150
 Wire Wire Line
-	6900 3950 7000 3950
-Wire Wire Line
-	2900 2900 2900 3050
-Wire Wire Line
-	2900 3050 3650 3050
-Wire Wire Line
-	2900 2400 2900 2550
-Wire Wire Line
-	2900 2400 2950 2400
-Wire Wire Line
-	2900 1900 2900 2050
-Wire Wire Line
-	2900 1900 2950 1900
-Wire Wire Line
-	4400 2900 4400 3050
-Wire Wire Line
-	4400 3050 5100 3050
-Wire Wire Line
-	2900 2050 3650 2050
-Wire Wire Line
-	2950 1400 2900 1400
-Wire Wire Line
-	2900 1400 2900 1550
-Wire Wire Line
-	2900 1550 3650 1550
-Wire Wire Line
-	4350 1400 4350 1550
-Wire Wire Line
-	4350 1550 5100 1550
-Wire Wire Line
-	4350 1400 4400 1400
-Wire Wire Line
-	4350 2050 4350 1900
-Wire Wire Line
-	4350 1900 4400 1900
-Wire Wire Line
-	4350 2050 5100 2050
-Wire Wire Line
-	4350 2550 4350 2400
-Wire Wire Line
-	4350 2400 4400 2400
-Wire Wire Line
-	4250 1200 4250 1700
-Wire Wire Line
-	4250 1200 4400 1200
-Wire Wire Line
-	4250 1700 4400 1700
-Connection ~ 4250 1700
-Wire Wire Line
-	4250 1700 4250 2200
-Wire Wire Line
-	4400 2200 4250 2200
-Connection ~ 4250 2200
-Wire Wire Line
-	4250 2200 4250 2700
-Wire Wire Line
-	4250 2700 4400 2700
-Connection ~ 4250 2700
-Wire Wire Line
 	2200 6950 1250 6950
 Connection ~ 1250 3350
-Connection ~ 3650 1550
 Wire Wire Line
 	2500 1300 2950 1300
 Wire Wire Line
@@ -422,71 +307,6 @@ Wire Wire Line
 	2950 2300 2700 2300
 Wire Wire Line
 	2950 2800 2800 2800
-Wire Wire Line
-	2400 1200 2950 1200
-Wire Wire Line
-	2950 1700 2400 1700
-Connection ~ 2400 1700
-Wire Wire Line
-	2400 1700 2400 1200
-Wire Wire Line
-	2950 2200 2400 2200
-Connection ~ 2400 2200
-Wire Wire Line
-	2400 2200 2400 1700
-Wire Wire Line
-	2950 2700 2400 2700
-Wire Wire Line
-	2400 2200 2400 2700
-Wire Wire Line
-	2400 1200 2400 1000
-Wire Wire Line
-	2400 1000 4250 1000
-Wire Wire Line
-	4250 1000 4250 1200
-Connection ~ 2400 1200
-Connection ~ 4250 1200
-Connection ~ 5100 1550
-Wire Wire Line
-	5100 2050 5100 1550
-Connection ~ 5100 2050
-Wire Wire Line
-	5100 2050 5100 2550
-Connection ~ 5100 2550
-Wire Wire Line
-	5100 2550 4350 2550
-Wire Wire Line
-	5100 3050 5100 2550
-Connection ~ 5100 3050
-Wire Wire Line
-	3750 3100 3750 1300
-Wire Wire Line
-	3750 1300 4400 1300
-Wire Wire Line
-	3850 3200 3850 1800
-Wire Wire Line
-	3850 1800 4400 1800
-Wire Wire Line
-	3950 3300 3800 3300
-Wire Wire Line
-	3950 2300 4400 2300
-Wire Wire Line
-	3950 2300 3950 3300
-Wire Wire Line
-	4050 3400 4050 2800
-Wire Wire Line
-	4050 2800 4400 2800
-Wire Wire Line
-	2300 900  3650 900 
-Wire Wire Line
-	5100 900  5100 1550
-Wire Wire Line
-	3650 900  3650 1550
-Connection ~ 3650 900 
-Wire Wire Line
-	3650 900  5100 900 
-Wire Wire Line
-	6900 4150 7700 4150
 Wire Wire Line
 	1800 3350 2200 3350
 Wire Wire Line
@@ -537,12 +357,6 @@ Wire Wire Line
 Wire Wire Line
 	550  7350 2600 7350
 Wire Wire Line
-	4250 2700 4250 3750
-Wire Wire Line
-	5100 3600 5100 3050
-Wire Wire Line
-	7700 3600 7700 4150
-Wire Wire Line
 	5900 1350 5900 900 
 Wire Wire Line
 	5900 900  6800 900 
@@ -590,10 +404,6 @@ Wire Wire Line
 Wire Wire Line
 	6250 7250 3100 7250
 Wire Wire Line
-	4250 3750 7000 3750
-Wire Wire Line
-	5100 3600 7700 3600
-Wire Wire Line
 	6400 1900 6550 1900
 Wire Wire Line
 	6400 1350 6650 1350
@@ -630,8 +440,6 @@ Wire Wire Line
 Wire Wire Line
 	6350 3350 6350 7350
 Wire Wire Line
-	6900 4150 6900 3950
-Wire Wire Line
 	8300 2650 5850 2650
 Wire Wire Line
 	8300 2650 8300 2450
@@ -656,10 +464,6 @@ Wire Wire Line
 Wire Wire Line
 	8000 3500 8000 3900
 Connection ~ 8000 3900
-Wire Wire Line
-	7250 4250 7250 4550
-Wire Wire Line
-	7250 4550 8800 4550
 $Comp
 L Teensy:Teensy-LC MCULC
 U 1 1 5F86B13E
@@ -702,60 +506,177 @@ Wire Wire Line
 Wire Wire Line
 	4100 4250 4100 4400
 Wire Wire Line
-	4100 4250 7250 4250
-Wire Wire Line
 	4000 4400 4000 3850
 Wire Wire Line
-	4000 3850 7000 3850
+	2500 1300 2500 3350
+$Comp
+L Device:R_POT RE8
+U 1 1 5F43285B
+P 4550 2800
+F 0 "RE8" H 4350 2850 50  0000 L CNN
+F 1 "10k" H 4350 2750 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4400 2960 50  0001 C CNN
+F 3 "~" H 4550 3060 50  0001 C CNN
+	1    4550 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT RE7
+U 1 1 5F4316E4
+P 4550 2300
+F 0 "RE7" H 4350 2350 50  0000 L CNN
+F 1 "10k" H 4350 2250 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4400 2460 50  0001 C CNN
+F 3 "~" H 4550 2560 50  0001 C CNN
+	1    4550 2300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT RE6
+U 1 1 5F430DDF
+P 4550 1800
+F 0 "RE6" H 4350 1850 50  0000 L CNN
+F 1 "10k" H 4350 1750 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4400 1960 50  0001 C CNN
+F 3 "~" H 4550 2060 50  0001 C CNN
+	1    4550 1800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT RE5
+U 1 1 5F43012E
+P 4550 1300
+F 0 "RE5" H 4350 1350 50  0000 L CNN
+F 1 "10k" H 4350 1250 50  0000 L CNN
+F 2 "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical" H 4400 1460 50  0001 C CNN
+F 3 "~" H 4550 1560 50  0001 C CNN
+	1    4550 1300
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	3900 3400 3900 4400
+	7300 3700 7300 3650
 Wire Wire Line
-	3900 3400 4050 3400
+	4000 3850 7150 3850
 Wire Wire Line
-	3800 3300 3800 4400
+	4550 1450 4850 1450
 Wire Wire Line
-	3700 4400 3700 3200
+	4850 1450 4850 1950
+Connection ~ 4550 1450
 Wire Wire Line
-	3700 3200 3850 3200
+	4550 2950 4850 2950
+Connection ~ 4550 2950
+Connection ~ 4850 2950
 Wire Wire Line
-	2800 2800 2800 3350
+	4550 2450 4850 2450
+Connection ~ 4550 2450
+Connection ~ 4850 2450
 Wire Wire Line
-	2800 3350 3500 3350
+	4850 2450 4850 2950
 Wire Wire Line
-	2700 2300 2700 3450
+	4550 1950 4850 1950
+Connection ~ 4550 1950
+Connection ~ 4850 1950
 Wire Wire Line
-	2700 3450 3400 3450
+	4850 1950 4850 2450
 Wire Wire Line
-	2600 3550 2600 1800
+	3100 2450 4550 2450
 Wire Wire Line
-	2500 1300 2500 3650
+	3100 2950 4550 2950
 Wire Wire Line
-	2500 3650 3200 3650
+	3100 1450 4550 1450
 Wire Wire Line
-	2300 900  2300 4100
+	3100 1950 4550 1950
 Wire Wire Line
-	2300 4100 3000 4100
+	4550 2650 5000 2650
+Connection ~ 4550 2650
 Wire Wire Line
-	3200 3650 3200 4400
+	5000 2650 5000 2150
 Wire Wire Line
-	3300 3550 3300 4400
+	4550 2150 5000 2150
+Connection ~ 4550 2150
+Connection ~ 5000 2150
 Wire Wire Line
-	3300 3550 2600 3550
+	5000 2150 5000 1650
 Wire Wire Line
-	3400 3450 3400 4400
+	4550 1650 5000 1650
+Connection ~ 4550 1650
+Connection ~ 5000 1650
 Wire Wire Line
-	3500 3350 3500 4400
+	5000 1650 5000 1150
 Wire Wire Line
-	3600 3100 3600 4400
+	4550 1150 5000 1150
+Connection ~ 4550 1150
 Wire Wire Line
-	3600 3100 3750 3100
+	3100 1150 4550 1150
 Wire Wire Line
-	3000 4400 3000 4100
+	3100 1650 4550 1650
 Wire Wire Line
-	3100 4400 3100 3800
+	3100 2650 4550 2650
 Wire Wire Line
-	3100 3800 2400 3800
+	3100 2150 4550 2150
 Wire Wire Line
-	2400 3800 2400 2700
-Connection ~ 2400 2700
+	3600 1300 4400 1300
+Wire Wire Line
+	3600 1300 3600 4400
+Wire Wire Line
+	3700 1800 4400 1800
+Wire Wire Line
+	3700 1800 3700 4400
+Wire Wire Line
+	3800 2300 4400 2300
+Wire Wire Line
+	3800 2300 3800 4400
+Wire Wire Line
+	3900 2800 4400 2800
+Wire Wire Line
+	3900 2800 3900 4400
+Wire Wire Line
+	2800 2800 2800 3050
+Wire Wire Line
+	3500 3050 2800 3050
+Wire Wire Line
+	3500 3050 3500 4400
+Wire Wire Line
+	3400 3150 2700 3150
+Wire Wire Line
+	2700 2300 2700 3150
+Wire Wire Line
+	3400 3150 3400 4400
+Wire Wire Line
+	3300 3250 2600 3250
+Wire Wire Line
+	2600 3250 2600 1800
+Wire Wire Line
+	3300 3250 3300 4400
+Wire Wire Line
+	3200 3350 2500 3350
+Wire Wire Line
+	3200 3350 3200 4400
+Wire Wire Line
+	3000 3650 3000 4400
+Wire Wire Line
+	5000 3650 5000 2650
+Connection ~ 5000 3650
+Wire Wire Line
+	5000 3650 3000 3650
+Connection ~ 5000 2650
+Wire Wire Line
+	5000 3650 7300 3650
+Wire Wire Line
+	3100 4050 4850 4050
+Wire Wire Line
+	7300 4050 7300 4000
+Wire Wire Line
+	3100 4050 3100 4400
+Wire Wire Line
+	4850 2950 4850 4050
+Connection ~ 4850 4050
+Wire Wire Line
+	4850 4050 7300 4050
+Wire Wire Line
+	7300 4250 7300 4550
+Wire Wire Line
+	7300 4550 8800 4550
+Wire Wire Line
+	4100 4250 7300 4250
 $EndSCHEMATC

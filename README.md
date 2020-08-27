@@ -1,7 +1,7 @@
 ![HSCommunity Logo](assets/hscommunity_logo_small.jpg)
 # Der Schwurbler
 Happy Shooting Community - DIY Lightroom Hardware Controller
-![Render with Parts](pcb/teensy-based/usb-teensy3.6/usb-teensy3.6_oben.jpg)
+![Render with Parts](pcb/teensy-based/usb-teensy_LC_41-theMVP/Render/front_with_LC.jpg)
 
 ## Description
 The german foto podcast legend Happy Shooting had a discussion about Midi controller for Lightroom. One comment on the website and voila a new project is born.
@@ -13,7 +13,7 @@ In general you might even need no case, just the pcb with the solded parts. so y
 You can find our wiki here https://github.com/mommel/hs-lr-midi-schwurbler/wiki
 
 ## Status of the project
-It's just a very first glimpse, and totally work in progress.
+Our first release - The MVP is on the horizon.
 
 ## Structure
 ### Circuit Diagram
@@ -25,7 +25,7 @@ It's just a very first glimpse, and totally work in progress.
  * The teensy version used the manufacture's [MIDI Libary](https://www.pjrc.com/teensy/td_libs_MIDI.html)
 
 ### BOM
- Consists of the list of used components for each version
+ Bill of materials Consists of the list of used components for each version
 
 ### Kicad
   Consists of the kicad projects - The mother of the Diagrams, Layouts and renderings.
@@ -33,7 +33,7 @@ It's just a very first glimpse, and totally work in progress.
 ### PCB
  Consits of Gerber, Etching and Renders
  They can be used to order PCBs from a manufacturer
-![PCB Rendering](pcb/teensy-based/usb-teensy3.6/usb-teensy3.6.jpg)
+![PCB Rendering](pcb/teensy-based/usb-teensy_LC_41-theMVP/Render/back_unmounted_ray.jpg)
 
 ### Prototyping
 
@@ -56,7 +56,7 @@ Consists of [Fritzing](https://fritzing.org/) files that can be easily recreated
 
 
 ## Releases
-* MVP Version will be released in the near future
+* MVP Version will be released in the nearest future
 *more informations to follow soon* 
 
 ## Help needed? F.A.Q.
@@ -88,7 +88,7 @@ Mommel https://github.com/mommel
 Vielpixel https://github.com/Vielpixel
 wolfgangSF https://github.com/wolfgangSF
 
-### 3D Party
+### 3rd Party
 Tools or Assets from 3rd party have their own LICENSE attached to their folder
 
 ## Disclaimer
