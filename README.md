@@ -15,33 +15,8 @@ You can find our wiki here https://github.com/mommel/hs-lr-midi-schwurbler/wiki
 ## Status of the project
 Our first release - The MVP is on the horizon.
 
-## Structure
-### Circuit Diagram
- Consists of circuit diagrams. The basic wiring logic.
-![Scheme](circuit-diagram/teensy-based/usb-teensy3.6/scheme.png)
-
-### Code
- Consists of the source code for the mcu
- * The teensy version used the manufacture's [MIDI Libary](https://www.pjrc.com/teensy/td_libs_MIDI.html)
-
-### BOM
- Bill of materials Consists of the list of used components for each version
-
-### Kicad
-  Consists of the kicad projects - The mother of the Diagrams, Layouts and renderings.
-
-### PCB
- Consits of Gerber, Etching and Renders
- They can be used to order PCBs from a manufacturer
-![PCB Rendering](pcb/teensy-based/usb-teensy_LC_41-theMVP/Render/back_unmounted_ray.jpg)
-
-### Prototyping
-
-Consists of [Fritzing](https://fritzing.org/) files that can be easily recreated on a breadboard.
-![Prototype Image](prototyping/teensy-based/usb-teensy3.6/usb-teensy3.6_Steckplatine.jpg)
-
 ### Tutorial
- *To be added soonish*
+ *To be found soonish in the Wiki*
 
 ## Versions
 ### USB Midi Version
@@ -53,7 +28,6 @@ Consists of [Fritzing](https://fritzing.org/) files that can be easily recreated
 * Based on a ESP32 Devboard
 * 18650 battery powered
 * uses Apple MIDI / RTP MIDI or Multicast UDP to send Midi messages over Multicast UDP ( undecided )
-
 
 ## Releases
 * MVP Version will be released in the nearest future
