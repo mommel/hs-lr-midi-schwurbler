@@ -9,3 +9,4 @@ circuit diagram/**/*bak
 /kicad/**/*kicad-rescue.*
 /kicad/**/*-cache
 /kicad/**/*cache.lib
+/code/teensy-based/usb-teensy_LC_41-theMVP/schwurbler_mvp/.pio/build/project.checksum
