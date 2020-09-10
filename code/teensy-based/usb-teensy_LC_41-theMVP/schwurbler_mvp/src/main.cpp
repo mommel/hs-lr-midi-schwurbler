@@ -5,7 +5,8 @@
 #include <ResponsiveAnalogRead.h>
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial2, MIDI);
 
-const int midiChannel = 3;
+const int midiChannel = 7;
+
 const int amountOfPotiControllerInputs = 9;
 const int amountOfDigitalButtonController = 14;
 const int cable = 0;
@@ -14,8 +15,8 @@ const int ON_VELOCITY = 99;
 const int potiControllerPin[amountOfPotiControllerInputs] = {A9, A8, A7, A6, A5, A4, A3, A2, A1};
 const int buttonControllerPin[amountOfDigitalButtonController] = {0, 1, 2, 3, 4, 5, 6 ,7,8, 9, 10, 11, 12, 14}; 
 
-const int controlNumbersAnalog[amountOfPotiControllerInputs] = {21, 22, 23, 24, 25, 26, 27, 28, 29};
-const int controlNumbersDigital[amountOfDigitalButtonController] = {60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73};
+const int controlNumbersAnalog[amountOfPotiControllerInputs] = {21, 22, 23, 25, 26, 27, 28, 30, 31};
+const int controlNumbersDigital[amountOfDigitalButtonController] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 const int BOUNCE_TIME = 7;
 const boolean toggled = true;
 
@@ -51,10 +52,10 @@ Bounce digitalButtonController[] =   {
   Bounce(buttonControllerPin[13], BOUNCE_TIME)
 }; 
 
-
 void setup()
 {
     MIDI.begin(midiChannel);
+    MIDI.turnThruOff();
     while( 
       arrayCount(potiControllerPin) != amountOfPotiControllerInputs || \
       arrayCount(controlNumbersAnalog) != amountOfPotiControllerInputs || \
@@ -71,25 +72,26 @@ void setup()
       pinMode(buttonControllerPin[digitalControllerID], INPUT_PULLUP);
     }
     #ifdef LEDPIN
-    pinMode(LEDPIN, OUTPUT);
+      pinMode(LEDPIN, OUTPUT);
     #endif
 }
 
 void sendMidiTrigger( int inControlNumber, boolean active = false, int sendChannelID = midiChannel) {
   #ifdef LEDPIN
-  digitalWrite( LEDPIN, (active ? HIGH : LOW) );
+    digitalWrite( LEDPIN, (active ? LOW : HIGH) );
   #endif
-  usbMIDI.sendControlChange( inControlNumber, (active ? ON_VELOCITY : 0 ), sendChannelID );
+  if (active) {
+    usbMIDI.sendNoteOn(inControlNumber, ON_VELOCITY, sendChannelID);
+  } else {
+    usbMIDI.sendNoteOff(inControlNumber, 0, sendChannelID);
+  }
 }
 
 void sendMidiValueChange( int inControlNumber, byte controllerValue, int sendChannelID = midiChannel) {
   #ifdef LEDPIN
-    digitalWrite( LEDPIN, HIGH);
+    digitalWrite( LEDPIN, LOW );
   #endif
   usbMIDI.sendControlChange( inControlNumber, controllerValue, sendChannelID );
-  #ifdef LEDPIN
-    digitalWrite( LEDPIN, LOW);
-  #endif
 }
 
 void getPotiData(){  
@@ -100,6 +102,10 @@ void getPotiData(){
       if (potiData[potiControllerID] != potiDataLag[potiControllerID]){
         potiDataLag[potiControllerID] = potiData[potiControllerID];
         sendMidiValueChange(controlNumbersAnalog[potiControllerID], potiData[potiControllerID]);
+      } else {
+        #ifdef LEDPIN
+          digitalWrite( LEDPIN, HIGH );
+        #endif
       }
     }
   }
@@ -121,4 +127,5 @@ void loop()
 {
   getPotiData();
   getButtonData();
+  while (usbMIDI.read()) {}// ignore incoming messages
 }
