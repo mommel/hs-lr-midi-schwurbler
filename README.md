@@ -13,25 +13,20 @@ In general you might even need no case, just the pcb with the solded parts. so y
 You can find our wiki here https://github.com/mommel/hs-lr-midi-schwurbler/wiki
 
 ## Status of the project
-Our first release - The MVP is on the horizon.
+Released a version and onging development for next versions
 
 ### Tutorial
  *To be found soonish in the Wiki*
 
 ## Versions
-### USB Midi Version
-* Based on the Teensy Dev Boards
+### MVP 
+* based on Teensy 32bit boards
 * USB Powered
-* uses a USB midi interface of the hardware
-
-### BLE / Wifi Midi Versions
-* Based on a ESP32 Devboard
-* 18650 battery powered
-* uses Apple MIDI / RTP MIDI or Multicast UDP to send Midi messages over Multicast UDP ( undecided )
+* 10 + 4 Buttons
+* 9 Poti
 
 ## Releases
-* MVP Version will be released in the nearest future
-*more informations to follow soon* 
+* [MVP Version](https://github.com/mommel/hs-lr-midi-schwurbler/releases/tag/v1.0.0) released
 
 ## Help needed? F.A.Q.
 * For support you can open an issue here on github.
