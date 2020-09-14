@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name HappyShooting)(type Legacy)(uri ${KIPRJMOD}/Library/hs.lib)(options "")(descr ""))
-)
