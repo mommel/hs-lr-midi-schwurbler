@@ -1,7 +1,7 @@
 ![HSCommunity Logo](assets/hscommunity_logo_small.jpg)
 # Der Schwurbler
 Happy Shooting Community - DIY Lightroom Hardware Controller
-![Render with Parts](pcb/teensy-based/usb-teensy_LC_41-theMVP/Render/front_with_LC.jpg)
+![Render with Parts](pcb/MVP/Render/front_with_LC.jpg)
 
 ## Description
 The german foto podcast legend Happy Shooting had a discussion about Midi controller for Lightroom. One comment on the website and voila a new project is born.
