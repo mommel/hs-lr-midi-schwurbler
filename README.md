@@ -9,6 +9,16 @@ This project will (hopefully) contain everything from zero to hero to get create
 It is completly community driven, so everyone is allowed to contribute. And it's not intended to earn money with it. Just from the community for the community.
 In general you might even need no case, just the pcb with the solded parts. so you will get an extra small extra lightwight device. If that's the thing for you we might even go the capacitive way and reduce the soldered components and weight to a minimum.
 
+<object width="425" height="350">
+  <param name="movie" value="https://youtu.be/SjJDIjGQ-qA" />
+  <param name="wmode" value="transparent" />
+  <embed src="https://youtu.be/SjJDIjGQ-qA"
+         type="application/x-shockwave-flash"
+         wmode="transparent" width="425" height="350" />
+</object>
+
+
+
 ## WIKI
 You can find our wiki here https://github.com/mommel/hs-lr-midi-schwurbler/wiki
 
