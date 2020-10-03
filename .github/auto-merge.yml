@@ -16,7 +16,7 @@ blockingLabels:
 
 rules:
 - minApprovals:
-    OWNER: 1
+    OWNER: 0
     COLLABORATOR: 1
 - requiredLabels:
   - merge
