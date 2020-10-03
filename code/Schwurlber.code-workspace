@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "SchwurblAir",
+			"path": "SchwurblAir"
+		},
+		{
+			"name": "MVP",
+			"path": "MVP"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"functional": "cpp"
+		}
+	}
+}
