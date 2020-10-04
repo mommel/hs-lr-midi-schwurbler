@@ -47,9 +47,12 @@
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
+
+#include <Arduino.h>
 #include <BLE-MIDI.h>
 #include <Bounce2.h>
 #include <ResponsiveAnalogRead.h>
+// cppcheck-suppress build/include_subdir
 #include <hardware/ESP32.h>
 
 #include <cstdlib>
@@ -74,8 +77,6 @@ bool isConnected = false;
  * General Midi Configurations                                                *
  *****************************************************************************/
 const int midiChannel = 7;
-const int amountOfPotiControllerInputs = 2;
-const int amountOfDigitalButtonController = 2;
 const int cable = 0;
 int activationVelocity = 99;
 const boolean toggled = true;
@@ -84,15 +85,16 @@ const int bounceTime = 7;
 
 /******************************************************************************
  * Controller - Pin Mapping                                                   *
+ * Pin and Number Entries must match together and to DEFINED AMOUNT           *
  *****************************************************************************/
-const int potiControllerPins[amountOfPotiControllerInputs] = {32, 33};
-const int buttonControllerPins[amountOfDigitalButtonController] = {2, 15};
+const int buttonControllerPins[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER] = {2, 15};
+const int controlNumbersDigital[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER] = {1, 2};
 
-const int controlNumbersAnalog[amountOfPotiControllerInputs] = {21, 22};
-const int controlNumbersDigital[amountOfDigitalButtonController] = {1, 2};
+const int potiControllerPins[AMOUNT_OF_ROTARYCONTROLLER] = {32, 33};
+const int controlNumbersAnalog[AMOUNT_OF_ROTARYCONTROLLER] = {21, 22};
 
-byte potiData[amountOfPotiControllerInputs];
-byte potiDataLag[amountOfPotiControllerInputs];
+byte potiData[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER];
+byte potiDataLag[AMOUNT_OF_ROTARYCONTROLLER];
 
 ResponsiveAnalogRead analogPotiController[]{
     {potiControllerPins[0], true}, {potiControllerPins[1], true},
@@ -125,15 +127,24 @@ RotaryController* rotaryInputs = new RotaryController();
 MidiController* midiCntrl = new MidiController();
 CommunicationController* bleCom = new CommunicationController();
 
+void throwConfigurationException(const int numberArray[], const int pinArray[],
+                                 unsigned char amount) {
+  throw std::runtime_error(
+      "Config Mismatch - Entries of arrays must to value. ");
+}
+
 /******************************************************************************
  * Callback Handler                                                           *
  *****************************************************************************/
 void OnBLEConnect() { bleCom->onConnectionChange(true); }
+
 void OnBLEDisconnect() { bleCom->onConnectionChange(false); }
+
 #ifdef DEBSERIAL
 void OnNoteRecieve(byte channel, byte note, byte velocity) {
   bleCom->recieveNote(channel, note, velocity);
 }
+
 void OnNoteRecieveEnd(byte channel, byte note, byte velocity) {
   bleCom->recieveNoteEnd(channel, note, velocity);
 }
@@ -145,7 +156,6 @@ void setup() {
 #ifdef DEBSERIAL
   Serial.begin(115200);
   while (!Serial) {
-    ;
   }
 #endif  // DEBSERIAL
   DPRINTLN("Booting");
@@ -165,21 +175,23 @@ void setup() {
 
   midiCntrl->configure(activationVelocity, midiChannel);
 
-  if (ARRAY_COUNT(digitalButtonController) != amountOfDigitalButtonController &&
-      ARRAY_COUNT(buttonControllerPins) != amountOfDigitalButtonController) {
-    throw "Configuration malformed -  The amount of given Pins has to match with the amount of given Controlnumbers";
+  if (ARRAY_COUNT(controlNumbersDigital) !=
+          AMOUNT_OF_DIGITAL_BUTTONCONTROLLER &&
+      ARRAY_COUNT(buttonControllerPins) != AMOUNT_OF_DIGITAL_BUTTONCONTROLLER) {
+    throwConfigurationException(controlNumbersDigital, buttonControllerPins,
+                                AMOUNT_OF_DIGITAL_BUTTONCONTROLLER);
   }
   buttonInputs->configure(midiCntrl, *digitalButtonController,
                           *buttonControllerPins, *controlNumbersDigital,
-                          amountOfDigitalButtonController, midiChannel);
+                          midiChannel);
 
-  if (ARRAY_COUNT(analogPotiController) != amountOfPotiControllerInputs ||
-      ARRAY_COUNT(potiControllerPins) != amountOfPotiControllerInputs) {
-    throw "Configuration malformed -  The amount of given Pins has to match with the amount of given Controlnumbers";
+  if (ARRAY_COUNT(controlNumbersAnalog) != AMOUNT_OF_ROTARYCONTROLLER ||
+      ARRAY_COUNT(potiControllerPins) != AMOUNT_OF_ROTARYCONTROLLER) {
+    throwConfigurationException(controlNumbersAnalog, potiControllerPins,
+                                AMOUNT_OF_ROTARYCONTROLLER);
   }
   rotaryInputs->configure(midiCntrl, *analogPotiController, *potiControllerPins,
-                          *controlNumbersAnalog, amountOfPotiControllerInputs,
-                          midiChannel);
+                          *controlNumbersAnalog, midiChannel);
 
   DPRINTLN(F("Ready"));
   while (!midiCntrl->isAvailable() || !buttonInputs->isAvailable() ||

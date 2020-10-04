@@ -34,6 +34,7 @@
 #include <Bounce2.h>
 
 #include "MidiController.h"
+#include "main.h"
 
 /**
  * Class manages Pushbuttons
@@ -52,23 +53,20 @@ class ButtonController {
    * controlNumbers
    * @param setControlNumbers Array of Midi Control Ids - will be mapped to
    * buttonControllerPins
-   * @param setAmountOfDigitalButtonController Reflects the amount of entries in
-   * controlNumbers and buttonControllerPins
+   * The amount of entries incontrolNumbers and buttonControllerPins must match
    * @param setMidiChannel The Midichannel where the event will be sent to
    */
   void configure(MidiController *ptrMidiControl,
                  Bounce setDigitalButtonController, int setButtonControllerPins,
-                 int setControlNumbers, int setAmountOfDigitalButtonController,
-                 int setMidiChannel);
+                 int setControlNumbers, int setMidiChannel);
 
  private:
   bool available;
   MidiController midiControl;
-  Bounce digitalButtonController[];
+  Bounce digitalButtonController[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER];
   int buttonControllerPins[];
   int controlNumbersMap[];
   int midiChannel;
-  int amountOfDigitalButtonController;
 
  public:
   /**

@@ -27,8 +27,10 @@
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
+#pragma once
 #ifndef __HELPERFUNCTIONS__
 #define __HELPERFUNCTIONS__
+
 #include <Arduino.h>
 
 template <typename T, size_t N>
