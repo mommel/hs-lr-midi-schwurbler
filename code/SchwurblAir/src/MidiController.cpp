@@ -34,14 +34,13 @@
 #include "HelperFunctions.h"
 #include "MidiController.h"
 
-MidiController::MidiController() {}
+MidiController::MidiController() { available = false; }
 
 void MidiController::configure(int setActivationVelocity,
                                int setSendChannelID) {
-  available = false;
   activationVelocity = setActivationVelocity;
-  available = true;
   sendChannelID = setSendChannelID;
+  available = true;
 }
 
 void MidiController::sendMidiTrigger(int inControlNumber, bool isActive) {

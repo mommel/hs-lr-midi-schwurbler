@@ -34,12 +34,12 @@
 #include "MidiController.h"
 #include "main.h"
 
-ButtonController::ButtonController() {}
+ButtonController::ButtonController() { available = false; }
+
 void ButtonController::configure(MidiController *ptrMidiControl,
                                  Bounce setDigitalButtonController,
                                  int setButtonControllerPins,
                                  int setControlNumbers, int setMidiChannel) {
-  available = false;
   midiControl = *ptrMidiControl;
   digitalButtonController[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER] =
       setDigitalButtonController;
@@ -53,7 +53,6 @@ void ButtonController::configure(MidiController *ptrMidiControl,
        digitalControllerID++) {
     pinMode(buttonControllerPins[digitalControllerID], INPUT_PULLUP);
   }
-
   available = true;
 }
 
