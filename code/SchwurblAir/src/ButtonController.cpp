@@ -32,27 +32,24 @@
 #include "ButtonController.h"
 #include "HelperFunctions.h"
 #include "MidiController.h"
+#include "main.h"
 
-ButtonController::ButtonController(){};
+ButtonController::ButtonController() {}
 void ButtonController::configure(MidiController *ptrMidiControl,
                                  Bounce setDigitalButtonController,
                                  int setButtonControllerPins,
-                                 int setControlNumbers,
-                                 int setAmountOfDigitalButtonController,
-                                 int setMidiChannel) {
+                                 int setControlNumbers, int setMidiChannel) {
   available = false;
-
   midiControl = *ptrMidiControl;
-  digitalButtonController[setAmountOfDigitalButtonController] =
+  digitalButtonController[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER] =
       setDigitalButtonController;
-  buttonControllerPins[setAmountOfDigitalButtonController] =
+  buttonControllerPins[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER] =
       setButtonControllerPins;
-  controlNumbersMap[setAmountOfDigitalButtonController] = setControlNumbers;
+  controlNumbersMap[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER] = setControlNumbers;
   midiChannel = setMidiChannel;
-  amountOfDigitalButtonController = setAmountOfDigitalButtonController;
 
   for (int digitalControllerID = 0;
-       digitalControllerID < amountOfDigitalButtonController;
+       digitalControllerID < AMOUNT_OF_DIGITAL_BUTTONCONTROLLER;
        digitalControllerID++) {
     pinMode(buttonControllerPins[digitalControllerID], INPUT_PULLUP);
   }
@@ -60,11 +57,11 @@ void ButtonController::configure(MidiController *ptrMidiControl,
   available = true;
 }
 
-bool ButtonController::isAvailable() { return available; };
+bool ButtonController::isAvailable() { return available; }
 
 void ButtonController::getButtonData() {
   for (int buttonControllerId = 0;
-       buttonControllerId < amountOfDigitalButtonController;
+       buttonControllerId < AMOUNT_OF_DIGITAL_BUTTONCONTROLLER;
        buttonControllerId++) {
     digitalButtonController[buttonControllerId].update();
 

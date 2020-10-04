@@ -27,6 +27,7 @@
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
+
 #pragma once
 #ifndef __ROTARYCONTROLLER__
 #define __ROTARYCONTROLLER__
@@ -34,6 +35,7 @@
 
 #include "MidiController.h"
 #include "RotaryController.h"
+#include "main.h"
 
 /**
  * Class manages RotaryController
@@ -53,21 +55,20 @@ class RotaryController {
    * controlNumbersAnalog
    * @param setControlNumbersAnalog Array of Midi Control Ids - will be mapped
    * to potiControllerPins
-   * @param setAmountOfPotiControllerInputs Reflects the amount of entries in
-   * controlNumbersAnalog and potiControllerPins
+   * The amount of entries in controlNumbersAnalog and potiControllerPins must
+   * match
    * @param setMidiSendChannel The Midichannel where the event will be sent to
    */
   void configure(MidiController *ptrMidiControl,
                  ResponsiveAnalogRead setAnalogPotiController,
                  int setPotiControllerPins, int setControlNumbersAnalog,
-                 int setAmountOfPotiControllerInputs, int setMidiSendChannel);
+                 int setMidiSendChannel);
 
  private:
   MidiController midiControl;
   ResponsiveAnalogRead analogPotiController[];
   int potiControllerPins[];
   int controlNumbersAnalogMap[];
-  int amountOfPotiControllerInputs;
   int midiChannel;
   byte potiData[];
   byte potiDataLag[];
