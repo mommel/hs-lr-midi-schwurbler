@@ -35,25 +35,20 @@
 #include "RotaryController.h"
 #include "main.h"
 
-RotaryController::RotaryController() {}
+RotaryController::RotaryController() { available = false; }
 
 void RotaryController::configure(MidiController *ptrMidiControl,
                                  ResponsiveAnalogRead setAnalogPotiController,
                                  int setPotiControllerPins,
                                  int setControlNumbersAnalog,
                                  int setMidiSendChannel) {
-  available = false;
-
   midiControl = *ptrMidiControl;
   analogPotiController[AMOUNT_OF_ROTARYCONTROLLER] = setAnalogPotiController;
   potiControllerPins[AMOUNT_OF_ROTARYCONTROLLER] = setPotiControllerPins;
   controlNumbersAnalogMap[AMOUNT_OF_ROTARYCONTROLLER] = setControlNumbersAnalog;
   midiChannel = setMidiSendChannel;
-  byte init = 0;
-  for (int i = 0; i < AMOUNT_OF_ROTARYCONTROLLER; i++) {
-    potiData[i] = init;
-    potiDataLag[i] = init;
-  }
+  potiData[AMOUNT_OF_ROTARYCONTROLLER] = {};
+  potiDataLag[AMOUNT_OF_ROTARYCONTROLLER] = {};
   available = true;
 }
 
@@ -64,8 +59,10 @@ void RotaryController::getPotiData() {
        potiControllerID++) {
     analogPotiController[potiControllerID].update();
     if (analogPotiController[potiControllerID].hasChanged()) {
-      potiData[potiControllerID] =
+      byte controllerValue =
           analogPotiController[potiControllerID].getValue() >> 3;
+      potiData[potiControllerID] = controllerValue;
+
       if (potiData[potiControllerID] != potiDataLag[potiControllerID]) {
         potiDataLag[potiControllerID] = potiData[potiControllerID];
 
