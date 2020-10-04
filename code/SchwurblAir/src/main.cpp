@@ -96,28 +96,12 @@ const int controlNumbersAnalog[AMOUNT_OF_ROTARYCONTROLLER] = {21, 22};
 byte potiData[AMOUNT_OF_DIGITAL_BUTTONCONTROLLER];
 byte potiDataLag[AMOUNT_OF_ROTARYCONTROLLER];
 
-ResponsiveAnalogRead analogPotiController[]{
-    {potiControllerPins[0], true}, {potiControllerPins[1], true},
-    {potiControllerPins[2], true}, {potiControllerPins[3], true},
-    {potiControllerPins[4], true}, {potiControllerPins[5], true},
-    {potiControllerPins[6], true}, {potiControllerPins[7], true},
-    {potiControllerPins[8], true}};
+ResponsiveAnalogRead analogPotiController[]{{potiControllerPins[0], true},
+                                            {potiControllerPins[1], true}};
 
 Bounce digitalButtonController[] = {
     Bounce(buttonControllerPins[0], bounceTime),
-    Bounce(buttonControllerPins[1], bounceTime),
-    Bounce(buttonControllerPins[2], bounceTime),
-    Bounce(buttonControllerPins[3], bounceTime),
-    Bounce(buttonControllerPins[4], bounceTime),
-    Bounce(buttonControllerPins[5], bounceTime),
-    Bounce(buttonControllerPins[6], bounceTime),
-    Bounce(buttonControllerPins[7], bounceTime),
-    Bounce(buttonControllerPins[8], bounceTime),
-    Bounce(buttonControllerPins[9], bounceTime),
-    Bounce(buttonControllerPins[10], bounceTime),
-    Bounce(buttonControllerPins[11], bounceTime),
-    Bounce(buttonControllerPins[12], bounceTime),
-    Bounce(buttonControllerPins[13], bounceTime)};
+    Bounce(buttonControllerPins[1], bounceTime)};
 
 /******************************************************************************
  * Init Subclasses                                                            *
