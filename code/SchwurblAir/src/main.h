@@ -27,9 +27,19 @@
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
-#ifndef __MAIN_H__
-#define __MAIN_H__
+#pragma once
+#ifndef __MAIN__
+#define __MAIN__
+
 #include <Arduino.h>
+
+#define AMOUNT_OF_DIGITAL_BUTTONCONTROLLER 2
+#define AMOUNT_OF_ROTARYCONTROLLER 2
+
+/**
+ * Exception gets thrown on configuration errors
+ */
+void throwConfigurationException();
 
 /**
  * Callback
@@ -58,4 +68,4 @@ void OnNoteRecieve(byte channel, byte note, byte velocity);
 void OnNoteRecieveEnd(byte channel, byte note, byte velocity);
 #endif  // DEBSERIAL
 
-#endif  // __MAIN_H__
+#endif  // __MAIN__

@@ -33,37 +33,35 @@
 #include "HelperFunctions.h"
 #include "MidiController.h"
 #include "RotaryController.h"
+#include "main.h"
 
-using namespace std;
-RotaryController::RotaryController(){};
+RotaryController::RotaryController() {}
 
 void RotaryController::configure(MidiController *ptrMidiControl,
                                  ResponsiveAnalogRead setAnalogPotiController,
                                  int setPotiControllerPins,
                                  int setControlNumbersAnalog,
-                                 int setAmountOfPotiControllerInputs,
                                  int setMidiSendChannel) {
   available = false;
 
   midiControl = *ptrMidiControl;
-  analogPotiController[setAmountOfPotiControllerInputs] =
-      setAnalogPotiController;
-  potiControllerPins[setAmountOfPotiControllerInputs] = setPotiControllerPins;
-  controlNumbersAnalogMap[setAmountOfPotiControllerInputs] =
-      setControlNumbersAnalog;
+  analogPotiController[AMOUNT_OF_ROTARYCONTROLLER] = setAnalogPotiController;
+  potiControllerPins[AMOUNT_OF_ROTARYCONTROLLER] = setPotiControllerPins;
+  controlNumbersAnalogMap[AMOUNT_OF_ROTARYCONTROLLER] = setControlNumbersAnalog;
   midiChannel = setMidiSendChannel;
-  amountOfPotiControllerInputs = setAmountOfPotiControllerInputs;
   byte init = 0;
-  for (int i = 0; i < setAmountOfPotiControllerInputs; i++) {
+  for (int i = 0; i < AMOUNT_OF_ROTARYCONTROLLER; i++) {
     potiData[i] = init;
     potiDataLag[i] = init;
   }
   available = true;
 }
-bool RotaryController::isAvailable() { return false; };
+
+bool RotaryController::isAvailable() { return false; }
+
 void RotaryController::getPotiData() {
-  for (int potiControllerID = 0;
-       potiControllerID < amountOfPotiControllerInputs; potiControllerID++) {
+  for (int potiControllerID = 0; potiControllerID < AMOUNT_OF_ROTARYCONTROLLER;
+       potiControllerID++) {
     analogPotiController[potiControllerID].update();
     if (analogPotiController[potiControllerID].hasChanged()) {
       potiData[potiControllerID] =

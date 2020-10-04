@@ -34,7 +34,7 @@
 #include "HelperFunctions.h"
 #include "MidiController.h"
 
-MidiController::MidiController() { int foo; }
+MidiController::MidiController() {}
 
 void MidiController::configure(int setActivationVelocity,
                                int setSendChannelID) {
