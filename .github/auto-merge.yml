@@ -16,10 +16,6 @@ rules:
 - requiredAuthorRole: OWNER
   minApprovals:
     OWNER: 0
-- Illuminated
-  - minApprovals:
-    OWNER: 0
-    COLLABORATOR: 2  
 - requiredAuthorRole: COLLABORATOR
   minApprovals:
     OWNER: 0    
