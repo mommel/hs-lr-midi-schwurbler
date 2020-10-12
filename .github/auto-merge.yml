@@ -1,12 +1,10 @@
 # Configuration for probot-auto-merge - https://github.com/bobvanderlinden/probot-auto-merge
+# Special Config for develop/Schwurbler360 branch do not merge into master
 
 updateBranch: true
 deleteBranchAfterMerge: true
-mergeMethod: rebase
+mergeMethod: squash
 reportStatus: true
-
-minApprovals:
-  COLLABORATOR: 0
 
 maxRequestedChanges:
   NONE: 0
@@ -15,16 +13,37 @@ blockingLabels:
 - blocked
 
 rules:
-- minApprovals:
+- requiredAuthorRole: OWNER
+  minApprovals:
     OWNER: 0
+- Illuminated
+  - minApprovals:
+    OWNER: 0
+    COLLABORATOR: 2  
+- requiredAuthorRole: COLLABORATOR
+  minApprovals:
+    OWNER: 0    
     COLLABORATOR: 1
+  requiredReviewers:
+  - Illuminated
+- minApprovals:
+  OWNER: 1
+  COLLABORATOR: 1
 - requiredLabels:
   - merge
 
 blockingBaseBranches:
 - master
 
+requiredTitleRegex: '^s360'
+
 requiredBaseBranches:
 - regex: '^develop/'
 
 blockingTitleRegex: '\bWIP\b'
+
+mergeCommitMessage:  |
+  {title} (#{number})
+  {branch}
+  {body}
+  {commits}
