@@ -1,5 +1,8 @@
 ![HSCommunity Logo](assets/hscommunity_logo_small.jpg)
 # Der Schwurbler
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b7432196b661456eb16e2e9c523376f8)](https://app.codacy.com/gh/mommel/hs-lr-midi-schwurbler?utm_source=github.com&utm_medium=referral&utm_content=mommel/hs-lr-midi-schwurbler&utm_campaign=Badge_Grade_Settings)
+
 Happy Shooting Community - DIY Lightroom Hardware Controller
 ![Render with Parts](pcb/MVP/Render/front_with_LC.jpg)
 
