@@ -11,13 +11,13 @@
  *        --                                                                  *
  ******************************************************************************
  *                                                                            *
- * Version: SchwurblAir 1.0.0                                                 *
- * Date:    Sep 25 2020                                                       *
+ * Version: Schwurbler - PotiController                                     *
+ * Date:    Oct 14 2020                                                       *
  * Name:    Manuel Braun                                                      *
  * Email:   mommel@gmx de                                                     *
  *                                                                            *
  *****************************************************************************/
-#include "main.h"
+#include "poti_controller.h"
 /**
  * Der Schwurbler
  *
@@ -40,44 +40,23 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
  * USE OR OTHER DEALINGS IN THE SOFTWARE
  *
- * @file main.cpp
+ * @file poti_controller.cpp
  *
- * @brief Main File of SchwurblAir
+ * @brief Digital Rotary Controller Class of Schwurbler
  *
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
-ButtonController* buttonController;
-PotiController* potiController;
-BLEMIDI_CREATE_INSTANCE("SchwurblAir", MIDI);
-
-
-/******************************************************************************
- * BLE Callback Handler                                                           *
- *****************************************************************************/
-void OnBLEConnect() { bleCom->onConnectionChange(true); }
-void OnBLEDisconnect() { bleCom->onConnectionChange(false); }
-void OnNoteRecieve(byte channel, byte note, byte velocity) {
-  bleCom->recieveNote(channel, note, velocity);
+int PotiController::GetAmount() { return this->kAmount_; };
+int PotiController::GetPin(int identifier) { return this->pin_[identifier]; };
+void PotiController::HandleMidiValueChangeCallback(
+    MidiValueChangeCallbackHandler midiValueChangeCallback) {
+  this->midiValueChangeCallback_ = midiValueChangeCallback;
+};
+void PotiController::GetData() {
+  for (int rotaryIdentifier = 0; rotaryIdentifier < this->kAmount_;
+       rotaryIdentifier++) {
+    // TODO(mommel): Needs to be implement functionality here.
+  }
 }
-void OnNoteRecieveEnd(byte channel, byte note, byte velocity) {
-  bleCom->recieveNoteEnd(channel, note, velocity);
-}
-
-// cppcheck-suppress unusedFunction // Function is used by arduino
-void setup() {
-  MIDI.begin(kMidiChannel);
-  BLEMIDI.setHandleConnected(OnBLEConnect);
-  BLEMIDI.setHandleDisconnected(OnBLEDisconnect);
-  MIDI.setHandleNoteOn(OnNoteRecieve);
-  MIDI.setHandleNoteOff(OnNoteRecieveEnd);
-
-}
-
-// cppcheck-suppress unusedFunction // Function is used by arduino
-void loop() {
-  potiController->getData();
-  buttonController->getData();
-  while (MIDI.read()) {
-  }  // ignore incoming messages
-}
+//}  // namespace controller

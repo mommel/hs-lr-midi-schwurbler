@@ -28,13 +28,34 @@
  * Contact: github.com/mommel
  */
 #pragma once
-#ifndef __MAIN__
-#define __MAIN__
+#ifndef SCHWURBLAIR_MAIN_H__
+#define SCHWURBLAIR_MAIN_H__
 
-#include <Arduino.h>
+#include "Arduino.h"
+#include "controller/button_controller.h"
+#include "controller/poti_controller.h"
+#include <BLE-MIDI.h>
+// cppcheck-suppress build/include_subdir
+#include <hardware/ESP32.h>
 
-#define AMOUNT_OF_DIGITAL_BUTTONCONTROLLER 2
-#define AMOUNT_OF_ROTARYCONTROLLER 2
+const int kOnVelocity = 99;
+const int kMidiChannel =7;
+
+/******************************************************************************
+ * General BLE Configurations                                                 *
+ *****************************************************************************/
+unsigned long startTime;
+bool isConnected = false;
+
+/******************************************************************************
+ * General Midi Configurations                                                *
+ *****************************************************************************/
+const int kMidiChannel = 7;
+const int kCable = 0;
+int activationVelocity = 99;
+boolean toggled = true;
+const int kStatusLED = 9;
+const int kBounceTime = 7;
 
 /**
  * Exception gets thrown on configuration errors
@@ -53,8 +74,6 @@ void OnBLEConnect();
  */
 void OnBLEDisconnect();
 
-#ifdef DEBSERIAL
-
 /**
  * Callback
  * Gets called when revcieving a Midi Event
@@ -66,6 +85,5 @@ void OnNoteRecieve(byte channel, byte note, byte velocity);
  * Gets called when revcieving a Midi Event End
  */
 void OnNoteRecieveEnd(byte channel, byte note, byte velocity);
-#endif  // DEBSERIAL
 
-#endif  // __MAIN__
+#endif  // SCHWURBLAIR_MAIN_H__
