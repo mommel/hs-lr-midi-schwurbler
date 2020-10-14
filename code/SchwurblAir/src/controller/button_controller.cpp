@@ -1,4 +1,5 @@
-/******************************************************************************
+/**
+ ******************************************************************************
  *            :+==+                                           -:              *
  *       -+#=+-  -=-    -*                             -@:   +W+              *
  *    -=#+-     -=-     =*         =:                 -@:   =*@-              *
@@ -11,13 +12,14 @@
  *        --                                                                  *
  ******************************************************************************
  *                                                                            *
- * Version: SchwurblAir 1.0.0                                                 *
- * Date:    Sep 25 2020                                                       *
+ * Version: Schwurbler - Buttoncontroller                                     *
+ * Date:    Oct 14 2020                                                       *
  * Name:    Manuel Braun                                                      *
  * Email:   mommel@gmx de                                                     *
  *                                                                            *
- *****************************************************************************/
-#include "main.h"
+ ******************************************************************************
+ */
+#include "button_controller.h"
 /**
  * Der Schwurbler
  *
@@ -40,44 +42,32 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
  * USE OR OTHER DEALINGS IN THE SOFTWARE
  *
- * @file main.cpp
+ * @file ButtonController.cpp
  *
- * @brief Main File of SchwurblAir
+ * @brief Button Controller Class of Schwurbler
  *
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
-ButtonController* buttonController;
-PotiController* potiController;
-BLEMIDI_CREATE_INSTANCE("SchwurblAir", MIDI);
+// namespace controller {
 
-
-/******************************************************************************
- * BLE Callback Handler                                                           *
- *****************************************************************************/
-void OnBLEConnect() { bleCom->onConnectionChange(true); }
-void OnBLEDisconnect() { bleCom->onConnectionChange(false); }
-void OnNoteRecieve(byte channel, byte note, byte velocity) {
-  bleCom->recieveNote(channel, note, velocity);
+int ButtonController::GetAmount() { return this->kAmount_; };
+int ButtonController::GetPin(int identifier) { return this->pin_[identifier]; };
+void ButtonController::HandleMidiTriggerCallback(
+    MidiTriggerCallbackHandler midiTriggerCallback) {
+  this->midiTriggerCallback_ = midiTriggerCallback;
+};
+void ButtonController::GetData() {
+  for (int buttonIdentifier = 0; buttonIdentifier < this->kAmount_;
+       buttonIdentifier++) {
+    this->button_[buttonIdentifier].update();
+    if (this->button_[buttonIdentifier].fallingEdge() ||
+        this->button_[buttonIdentifier].risingEdge()) {
+      int midiValue = this->midiValue_[buttonIdentifier];
+      bool is_active = (this->button_[buttonIdentifier].fallingEdge() &&
+                        !this->button_[buttonIdentifier].risingEdge());
+      this->midiTriggerCallback_(midiValue, is_active);
+    }
+  }
 }
-void OnNoteRecieveEnd(byte channel, byte note, byte velocity) {
-  bleCom->recieveNoteEnd(channel, note, velocity);
-}
-
-// cppcheck-suppress unusedFunction // Function is used by arduino
-void setup() {
-  MIDI.begin(kMidiChannel);
-  BLEMIDI.setHandleConnected(OnBLEConnect);
-  BLEMIDI.setHandleDisconnected(OnBLEDisconnect);
-  MIDI.setHandleNoteOn(OnNoteRecieve);
-  MIDI.setHandleNoteOff(OnNoteRecieveEnd);
-
-}
-
-// cppcheck-suppress unusedFunction // Function is used by arduino
-void loop() {
-  potiController->getData();
-  buttonController->getData();
-  while (MIDI.read()) {
-  }  // ignore incoming messages
-}
+//}  // namespace controller
