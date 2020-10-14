@@ -1,28 +1,14 @@
-#ifndef __MAIN__
-#define __MAIN__
+#ifndef SCHWURBLER360_MAIN_H_
+#define SCHWURBLER360_MAIN_H_
 
-#include <Arduino.h>
+#include <MIDI.h>
 
+#include "Arduino.h"
+#include "controller/button_controller.h"
+#include "controller/rotary_controller.h"
 #include "usb_names.h"
 
-class RotaryController {
- public:
-  RotaryController(){};
+const int kOnVelocity = 99;
+const int kMidiChannel = 7;
 
- private:
-  int amount = 0;
-}
-
-class ButtonController {
- public:
-  ButtonController(){};
-
- private:
-  int _amount = 14;
-  const int buttonControllerPin[_amount] = {0, 1, 2, 3,  4,  5,  6,
-                                            7, 8, 9, 10, 11, 12, 14};
-  const int controlNumbersDigital[_amount] = {1, 2, 3,  4,  5,  6,  7,
-                                              8, 9, 10, 11, 12, 13, 14};
-};
-
-#endif  // __MAIN__
+#endif  // SCHWURBLER360_MAIN_H_

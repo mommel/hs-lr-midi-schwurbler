@@ -11,13 +11,13 @@
  *        --                                                                  *
  ******************************************************************************
  *                                                                            *
- * Version: Schwurbler360 1.0.0                                               *
- * Date:    Oct 10 2020                                                       *
+ * Version: Schwurbler - RotaryController                                     *
+ * Date:    Oct 14 2020                                                       *
  * Name:    Manuel Braun                                                      *
  * Email:   mommel@gmx de                                                     *
  *                                                                            *
  *****************************************************************************/
-#include "main.h"
+#include "rotary_controller.h"
 /**
  * Der Schwurbler
  *
@@ -40,68 +40,24 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
  * USE OR OTHER DEALINGS IN THE SOFTWARE
  *
- * @file main.cpp
+ * @file RotaryController.cpp
  *
- * @brief Main File of Schwurbler360
+ * @brief Digital Rotary Controller Class of Schwurbler
  *
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
-ButtonController* buttonController;
-RotaryController* rotaryController;
-MIDI_CREATE_INSTANCE(HardwareSerial, Serial2, MIDI);
-
-void SendMidiValueChange(int inControlNumber, byte controllerValue) {
-  usbMIDI.sendControlChange(inControlNumber, controllerValue, kMidiChannel);
-  Serial.println((String) "Invoked Function called" + inControlNumber +
-                 " val " + controllerValue);
-}
-
-void SendMidiTrigger(int inControlNumber, bool is_active) {
-  if (is_active) {
-    usbMIDI.sendNoteOn(inControlNumber, kOnVelocity, kMidiChannel);
-  } else {
-    usbMIDI.sendNoteOff(inControlNumber, 0, kMidiChannel);
-  }
-  if (is_active) {
-    Serial.println((String) "Function sendMidiTrigger called with " +
-                   inControlNumber + " ACTIVE");
-  } else {
-    Serial.println((String) "Function sendMidiTrigger called with " +
-                   inControlNumber + " INACTIVE");
-  }
-}
-
-// cppcheck-suppress unusedFunction // Function is used by arduino
-void setup() {
-  MIDI.begin(kMidiChannel);
-  MIDI.turnThruOff();
-  Serial.begin(57600);
-  buttonController =
-      new ButtonController(14, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14},
-                           {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14});
-
-  for (int controllerID = 0; controllerID < buttonController->GetAmount();
-       controllerID++) {
-    pinMode(buttonController->GetPin(controllerID), INPUT_PULLUP);
-  };
-  buttonController->HandleMidiTriggerCallback(&SendMidiTrigger);
-
-  rotaryController =
-      new RotaryController(9, {23, 22, 21, 20, 19, 18, 17, 16, 15},
-                           {21, 22, 23, 25, 26, 27, 28, 30, 31});
-  for (int controllerID = 0; controllerID < rotaryController->GetAmount();
-       controllerID++) {
-    pinMode(rotaryController->GetPin(controllerID), INPUT_PULLUP);
-  };
-  rotaryController->HandleMidiValueChangeCallback(&SendMidiValueChange);
+// namespace controller {
+int RotaryController::GetAmount() { return this->kAmount_; };
+int RotaryController::GetPin(int identifier) { return this->pin_[identifier]; };
+void RotaryController::HandleMidiValueChangeCallback(
+    MidiValueChangeCallbackHandler midiValueChangeCallback) {
+  this->midiValueChangeCallback_ = midiValueChangeCallback;
 };
-
-// cppcheck-suppress unusedFunction // Function is used by arduino
-void loop() {
-  buttonController->GetData();
-  rotaryController->GetData();
-  delay(2000);
-  while (usbMIDI.read()) {
-  }  // ignore incoming messages
+void RotaryController::GetData() {
+  for (int rotaryIdentifier = 0; rotaryIdentifier < this->kAmount_;
+       rotaryIdentifier++) {
+    // TODO(mommel): Needs to be implement functionality here.
+  }
 }
+//}  // namespace controller
