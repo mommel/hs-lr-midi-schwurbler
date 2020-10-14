@@ -47,6 +47,19 @@
  * @author Manuel Braun
  * Contact: github.com/mommel
  */
+void PotiController::setPotiValueStore(int identifier, int value){
+  this->valueStore_[identifier]=value;
+};
+int PotiController::getPotiValueStore(int identifier){
+  return this->valueStore_[identifier];
+};
+void PotiController::setPotiLagStore(int identifier, int value){
+  this->lagStore_[identifier]=value;
+};
+int PotiController::getPotiLagStore(int identifier){
+  return this->lagStore_[identifier];
+};
+
 int PotiController::GetAmount() { return this->kAmount_; };
 int PotiController::GetPin(int identifier) { return this->pin_[identifier]; };
 void PotiController::HandleMidiValueChangeCallback(
@@ -54,9 +67,18 @@ void PotiController::HandleMidiValueChangeCallback(
   this->midiValueChangeCallback_ = midiValueChangeCallback;
 };
 void PotiController::GetData() {
-  for (int rotaryIdentifier = 0; rotaryIdentifier < this->kAmount_;
-       rotaryIdentifier++) {
-    // TODO(mommel): Needs to be implement functionality here.
+  for (int potiIdentifier = 0; potiIdentifier < this->kAmount_;
+       potiIdentifier++) {
+    this->poti_[potiIdentifier].update();
+    if (this->poti_[potiIdentifier].hasChanged()) {
+      this->setPotiValueStore(potiIdentifier,
+          this->poti_[potiIdentifier].getValue() >> 3;
+      );
+      if ( this->getPotiValueStore(potiIdentifier) != this->getPotiLagStore(potiIdentifier)) {
+        this->setPotiLagStore(potiIdentifier,  this->getPotiValueStore(potiIdentifier));
+        this->midiValueChangeCallback_(this->poti_[potiIdentifier], this->getPotiValueStore(potiIdentifier));                            
+      }
+    }  
   }
 }
 //}  // namespace controller
