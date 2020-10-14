@@ -1,6 +1,5 @@
 # Dont ignore
 !.gitkeep
-
 # Ignore
 **/.DS_Store
 circuit diagram/**/*bak
@@ -9,4 +8,10 @@ circuit diagram/**/*bak
 /kicad/**/*kicad-rescue.*
 /kicad/**/*-cache
 /kicad/**/*cache.lib
-/code/teensy-based/usb-teensy_LC_41-theMVP/schwurbler_mvp/.pio/build/project.checksum
+code/*/.pio/build
+code/*/.pio
+code/*/build
+code/*/.vscode/.browse.c_cpp.db*
+code/*/.vscode/c_cpp_properties.json
+code/*/.vscode/launch.json
+code/*/.vscode/ipch
