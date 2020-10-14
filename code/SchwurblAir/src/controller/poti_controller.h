@@ -73,6 +73,16 @@ class PotiController {
       this->midiValue_[counter] = e;
       ++counter;
     }
+    // TODO(mommel): With this block I'n pretty unhappy as it might leak - START
+    ResponsiveAnalogRead responsiveRead[amount];
+    counter = 0;
+    for (int e : pinList) {
+      responsiveRead[counter] = ResponsiveAnalogRead(e, true);
+      ++counter;
+    }
+    this->poti_ = &responsiveRead[amount];
+    // TODO(mommel): With this block I'n pretty unhappy as it might leak - END
+   
     this->midiValueChangeCallback_ = NULL;
   };
   PotiController(const PotiController& obj);
@@ -82,7 +92,14 @@ class PotiController {
   const int kAmount_;
   int* pin_;
   int* midiValue_;
+  ResponsiveAnalogRead* poti_;
   MidiValueChangeCallbackHandler midiValueChangeCallback_;
+  int[] valueStore_;
+  int[] lagStore_;
+  void setPotiValueStore(int identifier, int value);
+  int getPotiValueStore(int identifier);
+  void setPotiLagStore(int identifier, int value);
+  int getPotiLagStore(int identifier);
 
  public:
   PotiController& operator=(const PotiController& t);

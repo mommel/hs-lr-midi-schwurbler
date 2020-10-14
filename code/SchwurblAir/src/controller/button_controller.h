@@ -28,14 +28,10 @@
  * Contact: github.com/mommel
  */
 #pragma once
-#ifndef SCHWURBLER360_CONTROLLER_BUTTONCONTROLLER_H_
-#define SCHWURBLER360_CONTROLLER_BUTTONCONTROLLER_H_
-
+#ifndef SCHWURBLAIR_CONTROLLER_BUTTONCONTROLLER_H_
+#define SCHWURBLAIR_CONTROLLER_BUTTONCONTROLLER_H_
 #include <Bounce2.h>
-
 #include "Arduino.h"
-
-// namespace controller {
 
 /* !highlight cpp
  * Definiton of Callback Midi Trigger Callback
@@ -137,5 +133,4 @@ class ButtonController {
    */
   void GetData();
 };
-//}  // namespace controller
-#endif  // SCHWURBLER360_CONTROLLER_BUTTONCONTROLLER_H_
+#endif  // SCHWURBLAIR_CONTROLLER_BUTTONCONTROLLER_H_
