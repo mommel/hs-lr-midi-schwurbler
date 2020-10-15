@@ -8,33 +8,32 @@ on:
 jobs:
   build-documentation:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    # Build the HTML documentation
-    - name: Doxygen Action
-    - uses: mattnotmitt/doxygen-action@v1
-      with:
-        working-directory: 'code/MVP/'
-        doxyfile-path: 'docs/'
-    - uses: mattnotmitt/doxygen-action@v1
-      with:
-        working-directory: 'code/Schwurbler360/'
-        doxyfile-path: 'docs/'
-    - uses: mattnotmitt/doxygen-action@v1
-      with:
-        working-directory: 'code/SchwurblerAir/'
-        doxyfile-path: 'docs/'
-    - run: |
-        rm -r code/docs
-        mkdir code/docs
-        mv code/MVP/docs code/docs/MVP/
-        mv code/Schwurbler360/docs code/docs/Schwurbler360/        
-        mv code/SchwurblerAir/docs code/docs/SchwurblerAir/
-    - uses: seanmiddleditch/gha-publish-to-git@master
-      with:
-        branch: update-docs
-        github_token: '${{ secrets.GITHUB_TOKEN  }}'
-        github_pat: '${{ secrets.GH_PAT }}'
-        source_folder: code/docs/
-      if: success() && github.event == 'push'
+      - uses: actions/checkout@v2
+      # Build the HTML documentation
+      - name: Doxygen Action
+      - uses: mattnotmitt/doxygen-action@v1
+        with:
+          working-directory: 'code/MVP/'
+          doxyfile-path: 'docs/'
+      - uses: mattnotmitt/doxygen-action@v1
+        with:
+          working-directory: 'code/Schwurbler360/'
+          doxyfile-path: 'docs/'
+      - uses: mattnotmitt/doxygen-action@v1
+        with:
+          working-directory: 'code/SchwurblerAir/'
+          doxyfile-path: 'docs/'
+      - run: |
+          rm -r code/docs
+          mkdir code/docs
+          mv code/MVP/docs code/docs/MVP/
+          mv code/Schwurbler360/docs code/docs/Schwurbler360/        
+          mv code/SchwurblerAir/docs code/docs/SchwurblerAir/
+      - uses: seanmiddleditch/gha-publish-to-git@master
+        with:
+          branch: update-docs
+          github_token: '${{ secrets.GITHUB_TOKEN  }}'
+          github_pat: '${{ secrets.GH_PAT }}'
+          source_folder: code/docs/
+        if: success() && github.event == 'push'
