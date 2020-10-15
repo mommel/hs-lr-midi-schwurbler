@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: |
+          rm -r code/docs
       # Build the HTML documentation
-      - name: Doxygen Action
       - uses: mattnotmitt/doxygen-action@v1
         with:
           working-directory: 'code/MVP/'
