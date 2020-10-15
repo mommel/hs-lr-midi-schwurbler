@@ -1,0 +1,20 @@
+name: clang-tidy-review
+
+# You can be more specific, but it currently only works on pull requests
+on:
+  pull_request:
+    paths:
+    - 'code/**'
+      branches:
+      - master
+      - develop/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ZedThree/clang-tidy-review@v0.2.0
+      id: review
+    - if: steps.review.outpus.total_comments > 0
+      run: exit 1
