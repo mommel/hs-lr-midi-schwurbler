@@ -6,16 +6,20 @@ on:
 jobs:
   follow-master:
     runs-on: ubuntu-latest
-    steps:
-    - name: Follow Master Branch
-      uses: toysmoon/follow_branch@1.0.3
+    continue-on-error: false
+    timeout-minutes: 5
+    - uses: actions/checkout@v2
       with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          target-branch: develop/SchwurblAir
-          following-branch: master
-    - name: Follow Master Branch
-      uses: toysmoon/follow_branch@1.0.3
-      with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          target-branch: develop/Schwurbler360
-          following-branch: master
+        ref: develop/SchwurblAir
+    - run: |
+        git rebase master || (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+        git push -f origin develop/SchwurblAir || (echo "Git force push failed" && exit 101)
+        echo "SchwurblAir Rebased"
+        git checkout -b develop/Schwurbler360 origin/develop/Schwurbler360
+        git rebase master || (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+        git push -f origin develop/SchwurblAir || (echo "Git force push failed" && exit 101)
+        echo "Schwurbl360 Rebased"
+        git checkout -b develop/ToGo origin/develop/ToGo
+        git rebase master || (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+        git push -f origin develop/ToGo || (echo "Git force push failed" && exit 101)
+        echo "ToGo  Rebased"
