@@ -1,27 +1,20 @@
-# GitHub Action that enables a repo to achieve gradual compliance with cpplint by
-#     linting only those files that have been added or modified (vs. origin/master).
-# 1. runs cpplint only on those files that have been modified vs. origin/master.
-# 2. compiles with g++ only those files that have been modified vs. origin/master.
-# 3. other optional filepath verifications may be commented out at the end of this file.
-# From: https://github.com/cpplint/GitHub-Action-for-cpplint
-
-name: cpplint_modified_files
+name: code-linting
 on:
   pull_request:
     paths:
-    - 'code/**'
+      - 'code/**'
     branches:
       - master
       - 'develop/**'
 jobs:
-  cpplint_modified_files:
+  lint-changed-files:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - shell: python  # Show the version of shell: python and then upgrade shell: python to Python 3.9
-        run: import sys ; print("Python {}.{}.{}".format(*sys.version_info))  # Legacy Python :-(
-      - run: sudo update-alternatives --install /usr/bin/python python ${pythonLocation}/bin/python3.9 10
+        with:
+          python-version: '3.8'
+          architecture: x64
       - run: python -m pip install cpplint
       - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
       - run: git diff origin/$GITHUB_REF --name-only > git_diff.txt
@@ -56,4 +49,3 @@ jobs:
             subprocess.run(["cpplint.py ",  "--root=" + rootdir + " --filter=-legal/copyright,-build/" ] + files_in_rootlist, check=True, text=True)
             print("g++:")
             subprocess.run(["g++"] + files_in_rootlist, check=True, text=True)
-

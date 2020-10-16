@@ -1,35 +1,30 @@
-name: Doxygen_on_master
+name: Code Documentation
 on:
   push:
-    paths:
-    - 'code/**'
-    branches:
-    - master
+    branches: master
 jobs:
   build-documentation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          rm -r code/docs
-      # Build the HTML documentation
-      - uses: mattnotmitt/doxygen-action@v1
+
+      # Builds the documentation
+      - uses: mattnotmitt/doxygen-action@v1.2.0
         with:
-          working-directory: 'code/MVP/'
-          doxyfile-path: 'docs/'
-      - uses: mattnotmitt/doxygen-action@v1
+          working-directory: './code/MVP/'
+          doxyfile-path: './Doxyfile'
+      - uses: mattnotmitt/doxygen-action@v1.2.0
         with:
-          working-directory: 'code/Schwurbler360/'
-          doxyfile-path: 'docs/'
-      - uses: mattnotmitt/doxygen-action@v1
+          working-directory: './code/Schwurbler360/'
+          doxyfile-path: './Doxyfile'
+      - uses: mattnotmitt/doxygen-action@v1.2.0
         with:
           working-directory: 'code/SchwurblerAir/'
-          doxyfile-path: 'docs/'
+          doxyfile-path: './Doxyfile'
       - run: |
-          rm -r code/docs
-          mkdir code/docs
+          ls
           mv code/MVP/docs code/docs/MVP/
-          mv code/Schwurbler360/docs code/docs/Schwurbler360/        
+          mv code/Schwurbler360/docs code/docs/Schwurbler360/
           mv code/SchwurblerAir/docs code/docs/SchwurblerAir/
       - uses: seanmiddleditch/gha-publish-to-git@master
         with:
