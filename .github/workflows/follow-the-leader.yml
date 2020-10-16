@@ -13,7 +13,7 @@ jobs:
         with:
           ref: develop/SchwurblAir
       - run: |
-          git rebase master || \
+          git rebase origin master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
           git push -f origin develop/SchwurblAir || \
           (echo "Git force push failed" && exit 101)
@@ -23,7 +23,7 @@ jobs:
         with:
           ref: develop/SchwurblAir
       - run: |
-          git rebase master || \
+          git rebase origin master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
           git push -f origin develop/Schwurbler360 || \
           (echo "Git force push failed" && exit 101)
@@ -33,7 +33,7 @@ jobs:
         with:
           ref: develop/ToGo
       - run: |
-          git rebase master || \
+          git rebase origin master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
           git push -f origin develop/ToGo || \
           (echo "Git force push failed" && exit 101)
