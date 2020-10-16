@@ -25,6 +25,4 @@ jobs:
         with:
           branch: update-docs
           github_token: '${{ secrets.GITHUB_TOKEN  }}'
-          github_pat: '${{ secrets.GH_PAT }}'
-          source_folder: code/
         if: success() && github.event == 'push'
