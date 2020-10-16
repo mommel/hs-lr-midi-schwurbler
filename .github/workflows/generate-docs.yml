@@ -23,9 +23,9 @@ jobs:
           doxyfile-path: './Doxyfile'
       - run: |
           ls
-          mv code/MVP/docs code/docs/MVP/
-          mv code/Schwurbler360/docs code/docs/Schwurbler360/
-          mv code/SchwurblerAir/docs code/docs/SchwurblerAir/
+          [ -d  "code/MVP/docs" ] &&  code/MVP/docs code/docs/MVP/
+          [ -d  "code/Schwurbler360/docs" ] && mv code/Schwurbler360/docs code/docs/Schwurbler360/
+          [ -d  "code/SchwurblerAir/docs" ] && mv code/SchwurblerAir/docs code/docs/SchwurblerAir/
       - uses: seanmiddleditch/gha-publish-to-git@master
         with:
           branch: update-docs
