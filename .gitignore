@@ -8,10 +8,10 @@ circuit diagram/**/*bak
 /kicad/**/*kicad-rescue.*
 /kicad/**/*-cache
 /kicad/**/*cache.lib
+code/*/.pio/build
 code/*/.pio
 code/*/build
-code/*/.vscode/launch.json
 code/*/.vscode/.browse.c_cpp.db*
+code/*/.vscode/c_cpp_properties.json
 code/*/.vscode/launch.json
 code/*/.vscode/ipch
-code/*/.vscode/c_cpp_properties.json
