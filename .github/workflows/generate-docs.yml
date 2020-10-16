@@ -21,7 +21,7 @@ jobs:
         with:
           working-directory: 'code/SchwurblAir/'
           doxyfile-path: './Doxyfile'
-      - uses: seanmiddleditch/gha-publish-to-git@master
+      - uses: seanmiddleditch/gha-publish-to-git@v2
         with:
           branch: update-docs
           github_token: '${{ secrets.GITHUB_TOKEN  }}'

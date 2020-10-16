@@ -1,0 +1,21 @@
+name: Follow Master
+on:
+  push:
+    branches:
+      - master
+jobs:
+  follow-master:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Follow Master Branch
+      uses: toysmoon/follow_branch@1.0.3
+      with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: develop/SchwurblAir
+          following-branch: master
+    - name: Follow Master Branch
+      uses: toysmoon/follow_branch@1.0.3
+      with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: develop/Schwurbler360
+          following-branch: master
