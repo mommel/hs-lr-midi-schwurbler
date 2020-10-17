@@ -40,10 +40,12 @@ jobs:
         with:
           working-directory: 'code/SchwurblAir/'
           doxyfile-path: 'Doxyfile'
-      - name: Commit and push changes
-        uses: actions/checkout@v2
+      - name: Setup GIT token
+        uses: fregante/setup-git-token@v1
         with:
-          clean: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Doc Bot
+          email: bot@dotboc.com
       - run: |
           git diff --quiet master origin/master && \
           git checkout -b docs/${GITHUB_SHA}/${GITHUB_RUN_NUMBER} &&  \

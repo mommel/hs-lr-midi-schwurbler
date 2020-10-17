@@ -14,9 +14,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: develop/SchwurblAir
+      - name: Setup GIT token
+        uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: App Date Bot
+          email: appdate@example.com
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+      - run: git status
       - run: |
           git diff --quiet develop/SchwurblAir origin/develop/SchwurblAir || \
           git push -f || (echo "Git force push failed" && exit 101)
@@ -32,6 +39,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: develop/Schwurbler360
+      - name: Setup GIT token
+        uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: App Date Bot
+          email: appdate@example.com
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
@@ -50,6 +63,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: develop/ToGo
+      - name: Setup GIT token
+        uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: App Date Bot
+          email: appdate@example.com
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
