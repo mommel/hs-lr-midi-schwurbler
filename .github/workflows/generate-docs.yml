@@ -3,28 +3,50 @@ name: Code Documentation
 on:
   push:
     branches: master
+    paths:
+      - 'code/**'
+      - '!code/docs/**'
 jobs:
   build-documentation:
+    name: Generate Code Documentation
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Master
       - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Versions Check
+        run: |
+         echo 'VERSIONS=echo $(for i in $(ls code); \
+         do;[ -d \"code/$i/src\" ] && echo $i ;done;)' >> $GITHUB_ENV
 
       # Builds the documentation
-      - uses: mattnotmitt/doxygen-action@v1.2.0
+      - name: Generate MVP Docs
+        if: contains(env.VERSIONS, 'MVP')
+        uses: mattnotmitt/doxygen-action@v1.2.0
         with:
-          working-directory: './code/MVP/'
-          doxyfile-path: './Doxyfile'
-      - uses: mattnotmitt/doxygen-action@v1.2.0
+          working-directory: 'code/MVP/'
+          doxyfile-path: 'Doxyfile'
+      - name: Generate Schwurbler360 Docs
+        if: contains(env.VERSIONS, 'Schwurbler360')
+        uses: mattnotmitt/doxygen-action@v1.2.0
         with:
-          working-directory: './code/Schwurbler360/'
-          doxyfile-path: './Doxyfile'
-      - uses: mattnotmitt/doxygen-action@v1.2.0
+          working-directory: 'code/Schwurbler360/'
+          doxyfile-path: 'Doxyfile'
+      - name: Generate SchwurblAir Docs
+        if: contains(env.VERSIONS, 'SchwurblAir')
+        uses: mattnotmitt/doxygen-action@v1.2.0
         with:
           working-directory: 'code/SchwurblAir/'
-          doxyfile-path: './Doxyfile'
-
-      - uses: seanmiddleditch/gha-publish-to-git@v2
+          doxyfile-path: 'Doxyfile'
+      - name: Commit and push changes
+        uses: actions/checkout@v2
         with:
-          branch: update-docs
-          github_token: '${{ secrets.GITHUB_TOKEN  }}'
-        if: success() && github.event == 'push'
+          clean: false
+      - run: |
+          git diff --quiet master origin/master && \
+          git checkout -b docs/${GITHUB_SHA}/${GITHUB_RUN_NUMBER} &&  \
+          git add -A && \
+          git commit -m "Documentation update " && \
+          git push

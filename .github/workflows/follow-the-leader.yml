@@ -1,10 +1,11 @@
 ---
-name: Follow Master
+name: Follow Leader
 on:
   push:
     branches: master
 jobs:
-  dev-follow-master:
+  rebaseAir:
+    name: Rebase SchwurblAir
     runs-on: ubuntu-latest
     continue-on-error: false
     timeout-minutes: 5
@@ -12,26 +13,45 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: develop/SchwurblAir
+      - name: SchwurblAir
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+      - run: |
+          git diff --quiet develop/SchwurblAir origin/develop/SchwurblAir || \
           git push -f || (echo "Git force push failed" && exit 101)
           echo "SchwurblAir Rebased"
 
+  rebase360:
+    name: Rebase Schwurbler360
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    timeout-minutes: 5
+    steps:
       - uses: actions/checkout@v2
         with:
-          ref: develop/SchwurblAir
+          ref: develop/Schwurbler360
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+      - run: |
+          git diff --quiet develop/SchwurblAir origin/develop/Schwurbl360 || \
           git push -f || (echo "Git force push failed" && exit 101)
           echo "Schwurbl360 Rebased"
 
+  rebaseTogo:
+    name: Rebase ToGo
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    timeout-minutes: 5
+    steps:
       - uses: actions/checkout@v2
         with:
           ref: develop/ToGo
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
+      - run: |
+          git diff --quiet develop/SchwurblAir origin/develop/ToGo || \
           git push -f || (echo "Git force push failed" && exit 101)
           echo "ToGo  Rebased"

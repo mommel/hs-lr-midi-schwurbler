@@ -1,4 +1,4 @@
-# Doxyfile 1.8.18
+# Doxyfile 1.8.20
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -8,9 +8,9 @@ PROJECT_NAME           = "Schwurbler MVP"
 PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "The german foto podcast legend Happy Shooting had a discussion about Midi controller for Lightroom. One comment on the website and voila a new project is born. This project will (hopefully) contain everything from zero to hero to get create your own customized Midi Controller for Lightroom. It is completly community driven, so everyone is allowed to contribute. And it's not intended to earn money with it. Just from the community for the community. In general you might even need no case, just the pcb with the solded parts. so you will get an extra small extra lightwight device. If that's the thing for you we might even go the capacitive way and reduce the soldered components and weight to a minimum."
 PROJECT_LOGO           =
-OUTPUT_DIRECTORY       = ./doc/
-CREATE_SUBDIRS         = YES
-ALLOW_UNICODE_NAMES    = NO
+OUTPUT_DIRECTORY       = "../docs/MVP"
+CREATE_SUBDIRS         = NO
+ALLOW_UNICODE_NAMES    = YES
 OUTPUT_LANGUAGE        = English
 OUTPUT_TEXT_DIRECTION  = None
 BRIEF_MEMBER_DESC      = YES
@@ -26,9 +26,9 @@ ABBREVIATE_BRIEF       = "The $name class" \
                          a \
                          an \
                          the
-ALWAYS_DETAILED_SEC    = NO
+ALWAYS_DETAILED_SEC    = YES
 INLINE_INHERITED_MEMB  = NO
-FULL_PATH_NAMES        = NO
+FULL_PATH_NAMES        = YES
 STRIP_FROM_PATH        =
 STRIP_FROM_INC_PATH    =
 SHORT_NAMES            = NO
@@ -36,6 +36,7 @@ JAVADOC_AUTOBRIEF      = YES
 JAVADOC_BANNER         = YES
 QT_AUTOBRIEF           = NO
 MULTILINE_CPP_IS_BRIEF = YES
+PYTHON_DOCSTRING       = YES
 INHERIT_DOCS           = YES
 SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 4
@@ -60,6 +61,7 @@ INLINE_GROUPED_CLASSES = NO
 INLINE_SIMPLE_STRUCTS  = NO
 TYPEDEF_HIDES_STRUCT   = NO
 LOOKUP_CACHE_SIZE      = 0
+NUM_PROC_THREADS       = 1
 #---------------------------------------------------------------------------
 # Build related configuration options
 #---------------------------------------------------------------------------
@@ -69,14 +71,14 @@ EXTRACT_PRIV_VIRTUAL   = YES
 EXTRACT_PACKAGE        = YES
 EXTRACT_STATIC         = YES
 EXTRACT_LOCAL_CLASSES  = YES
-EXTRACT_LOCAL_METHODS  = NO
+EXTRACT_LOCAL_METHODS  = YES
 EXTRACT_ANON_NSPACES   = YES
 HIDE_UNDOC_MEMBERS     = NO
 HIDE_UNDOC_CLASSES     = NO
 HIDE_FRIEND_COMPOUNDS  = NO
 HIDE_IN_BODY_DOCS      = NO
-INTERNAL_DOCS          = NO
-CASE_SENSE_NAMES       = YES
+INTERNAL_DOCS          = YES
+CASE_SENSE_NAMES       = NO
 HIDE_SCOPE_NAMES       = NO
 HIDE_COMPOUND_REFERENCE= NO
 SHOW_INCLUDE_FILES     = YES
@@ -84,10 +86,10 @@ SHOW_GROUPED_MEMB_INC  = NO
 FORCE_LOCAL_INCLUDES   = NO
 INLINE_INFO            = YES
 SORT_MEMBER_DOCS       = YES
-SORT_BRIEF_DOCS        = NO
-SORT_MEMBERS_CTORS_1ST = NO
-SORT_GROUP_NAMES       = NO
-SORT_BY_SCOPE_NAME     = NO
+SORT_BRIEF_DOCS        = YES
+SORT_MEMBERS_CTORS_1ST = YES
+SORT_GROUP_NAMES       = YES
+SORT_BY_SCOPE_NAME     = YES
 STRICT_PROTO_MATCHING  = NO
 GENERATE_TODOLIST      = YES
 GENERATE_TESTLIST      = YES
@@ -115,22 +117,55 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = ./src/
+INPUT                  = "src"
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
-                         *.ino \
                          *.cc \
                          *.cxx \
                          *.cpp \
                          *.c++ \
+                         *.java \
+                         *.ii \
+                         *.ixx \
+                         *.ipp \
+                         *.i++ \
+                         *.inl \
+                         *.idl \
+                         *.ddl \
+                         *.odl \
                          *.h \
                          *.hh \
                          *.hxx \
                          *.hpp \
                          *.h++ \
+                         *.cs \
+                         *.d \
+                         *.php \
+                         *.php4 \
+                         *.php5 \
+                         *.phtml \
+                         *.inc \
+                         *.m \
                          *.markdown \
                          *.md \
-                         *.mm
+                         *.mm \
+                         *.dox \
+                         *.doc \
+                         *.txt \
+                         *.py \
+                         *.pyw \
+                         *.f90 \
+                         *.f95 \
+                         *.f03 \
+                         *.f08 \
+                         *.f18 \
+                         *.f \
+                         *.for \
+                         *.vhd \
+                         *.vhdl \
+                         *.ucf \
+                         *.qsf \
+                         *.ice
 RECURSIVE              = YES
 EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
@@ -152,14 +187,11 @@ SOURCE_BROWSER         = YES
 INLINE_SOURCES         = YES
 STRIP_CODE_COMMENTS    = YES
 REFERENCED_BY_RELATION = YES
-REFERENCES_RELATION    = NO
+REFERENCES_RELATION    = YES
 REFERENCES_LINK_SOURCE = YES
 SOURCE_TOOLTIPS        = YES
 USE_HTAGS              = NO
 VERBATIM_HEADERS       = YES
-CLANG_ASSISTED_PARSING = NO
-CLANG_OPTIONS          =
-CLANG_DATABASE_PATH    =
 #---------------------------------------------------------------------------
 # Configuration options related to the alphabetical class index
 #---------------------------------------------------------------------------
@@ -184,7 +216,7 @@ HTML_TIMESTAMP         = YES
 HTML_DYNAMIC_MENUS     = YES
 HTML_DYNAMIC_SECTIONS  = NO
 HTML_INDEX_NUM_ENTRIES = 100
-GENERATE_DOCSET        = NO
+GENERATE_DOCSET        = YES
 DOCSET_FEEDNAME        = "Doxygen generated docs"
 DOCSET_BUNDLE_ID       = org.doxygen.Project
 DOCSET_PUBLISHER_ID    = org.doxygen.Publisher
@@ -207,7 +239,7 @@ QHG_LOCATION           =
 GENERATE_ECLIPSEHELP   = NO
 ECLIPSE_DOC_ID         = org.doxygen.Project
 DISABLE_INDEX          = NO
-GENERATE_TREEVIEW      = YES
+GENERATE_TREEVIEW      = NO
 ENUM_VALUES_PER_LINE   = 4
 TREEVIEW_WIDTH         = 250
 EXT_LINKS_IN_WINDOW    = NO
@@ -230,7 +262,7 @@ EXTRA_SEARCH_MAPPINGS  =
 #---------------------------------------------------------------------------
 # Configuration options related to the LaTeX output
 #---------------------------------------------------------------------------
-GENERATE_LATEX         = NO
+GENERATE_LATEX         = YES
 LATEX_OUTPUT           = latex
 LATEX_CMD_NAME         =
 MAKEINDEX_CMD_NAME     = makeindex
@@ -319,7 +351,7 @@ CLASS_DIAGRAMS         = YES
 DIA_PATH               =
 HIDE_UNDOC_RELATIONS   = YES
 HAVE_DOT               = NO
-DOT_NUM_THREADS        = 1
+DOT_NUM_THREADS        = 0
 DOT_FONTNAME           = Helvetica
 DOT_FONTSIZE           = 10
 DOT_FONTPATH           =
@@ -347,6 +379,6 @@ PLANTUML_INCLUDE_PATH  =
 DOT_GRAPH_MAX_NODES    = 50
 MAX_DOT_GRAPH_DEPTH    = 0
 DOT_TRANSPARENT        = NO
-DOT_MULTI_TARGETS      = YES
+DOT_MULTI_TARGETS      = NO
 GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES

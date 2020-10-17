@@ -1,24 +1,32 @@
+---
 name: code-linting
 on:
   pull_request:
     paths:
       - 'code/**'
+      - '!code/docs/**'
     branches:
       - master
       - 'develop/**'
 jobs:
   lint-changed-files:
+    name: Lint Code
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Checkout Branch
+        uses: actions/checkout@v2
+
+      - name: Install Linter
+        uses: actions/setup-python@v2
         with:
           python-version: '3.8'
           architecture: x64
       - run: python -m pip install cpplint
       - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-      - run: git diff origin/$GITHUB_REF --name-only > git_diff.txt
-      - name: cpplint_modified_files
+      - name: Creating File Delta
+        run: git diff origin/$GITHUB_REF --name-only > git_diff.txt
+      - name: Linting Files
         shell: python
         run: |
           import os
