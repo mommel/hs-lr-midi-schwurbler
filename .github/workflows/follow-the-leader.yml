@@ -10,10 +10,10 @@ jobs:
     continue-on-error: false
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
+      - name: SchwurblAir
+        uses: actions/checkout@v2
         with:
           ref: develop/SchwurblAir
-      - name: SchwurblAir
       - run: |
           git rebase master || \
           (git rebase --abort && echo "Merge conflicts happened" && exit 100)
@@ -28,7 +28,8 @@ jobs:
     continue-on-error: false
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
+      - name: Schwurbl360
+        uses: actions/checkout@v2
         with:
           ref: develop/Schwurbler360
       - run: |
@@ -45,7 +46,8 @@ jobs:
     continue-on-error: false
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
+      - name: Togo
+        uses: actions/checkout@v2
         with:
           ref: develop/ToGo
       - run: |
