@@ -1,0 +1,3 @@
+[submodule "wiki/wiki_repository"]
+	path = wiki/wiki_repository
+	url = https://github.com/mommel/hs-lr-midi-schwurbler.wiki.git
