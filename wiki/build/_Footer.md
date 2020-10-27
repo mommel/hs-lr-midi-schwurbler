@@ -1,0 +1,1 @@
+ ![Der Schwurbler - Logo](https://github.com/mommel/hs-lr-midi-schwurbler/blob/master/images-wiki/Schwurbler-logo-sm.png)

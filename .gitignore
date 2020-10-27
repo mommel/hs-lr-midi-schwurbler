@@ -5,9 +5,9 @@
 circuit diagram/**/*bak
 *.sch-bak
 *.kicad_pcb-bak
-/kicad/**/*kicad-rescue.*
-/kicad/**/*-cache
-/kicad/**/*cache.lib
+kicad/**/*kicad-rescue.*
+kicad/**/*-cache
+kicad/**/*cache.lib
 code/*/.pio
 code/*/build
 code/*/.vscode/launch.json
@@ -15,3 +15,4 @@ code/*/.vscode/.browse.c_cpp.db*
 code/*/.vscode/launch.json
 code/*/.vscode/ipch
 code/*/.vscode/c_cpp_properties.json
+wiki/multilang_md.py
