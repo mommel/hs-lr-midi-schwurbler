@@ -1,0 +1,191 @@
+{
+  "folders": [
+    {
+      "name": "Schwurbler MVP",
+      "path": "MVP"
+    },
+    {
+      "name": "Schwurbler360",
+      "path": "Schwurbler360"
+    },
+    {
+      "name": "SchwurblAir",
+      "path": "SchwurblAir"
+    },
+    {
+      "path": "Utilities"
+    },
+    {
+      "name": "Documentation",
+      "path": "Documentation"
+    },
+    {
+      "name": "Documentation MVP",
+      "path": "Documentation/MVP"
+    },
+    {
+      "name": "Documentation S360",
+      "path": "Documentation/Schwurbler360"
+    },
+    {
+      "name": "Documentation SAir",
+      "path": "Documentation/SchwurblAir"
+    }
+  ],
+  "settings": {
+    "C_Cpp.clang_format_sortIncludes": true,
+    "[c]": {
+      "editor.renderWhitespace": "none",
+      "editor.acceptSuggestionOnEnter": "off",
+      "editor.formatOnSave": true,
+      "editor.wordWrap": "on",
+      "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": true
+    },
+    "[cmake]": {
+      "editor.autoIndent": "advanced",
+      "editor.colorDecorators": true,
+      "editor.formatOnPaste": true,
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[cpp]": {
+      "editor.renderWhitespace": "none",
+      "editor.acceptSuggestionOnEnter": "off",
+      "editor.formatOnSave": true,
+      "editor.wordWrap": "on",
+      "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": true,
+      "editor.suggest.showColors": true,
+      "editor.useTabStops": true
+    },
+    "[doxygen]": {
+      "editor.autoIndent": "keep",
+      "editor.colorDecorators": true,
+      "editor.fontFamily": "Verdana, Arial",
+      "editor.formatOnSave": true,
+      "editor.renderWhitespace": "none",
+      "editor.rulers": [
+        80,
+        120
+      ],
+      "editor.suggest.showColors": true,
+      "editor.useTabStops": true,
+      "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": true
+    },
+    "[git-commit]": {
+      "editor.formatOnSave": true,
+      "editor.rulers": [
+        30
+      ],
+      "editor.useTabStops": false,
+      "files.trimFinalNewlines": true,
+      "files.trimTrailingWhitespace": true
+    },
+    "[json]": {
+      "editor.autoIndent": "full",
+      "editor.autoSurround": "brackets",
+      "editor.colorDecorators": true,
+      "editor.cursorStyle": "block",
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "editor.renderWhitespace": "all",
+      "editor.tabSize": 2,
+      "editor.trimAutoWhitespace": true,
+      "files.insertFinalNewline": true
+    },
+    "[jsonc]": {
+      "editor.autoIndent": "full",
+      "editor.autoSurround": "brackets",
+      "editor.colorDecorators": true,
+      "editor.cursorStyle": "block",
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "editor.renderWhitespace": "all",
+      "editor.tabSize": 2,
+      "editor.trimAutoWhitespace": true,
+      "files.insertFinalNewline": true
+    },
+    "[makefile]": {
+      "editor.colorDecorators": true,
+      "editor.defaultFormatter": null,
+      "editor.formatOnSave": true
+    },
+    "[markdown]": {
+      "editor.acceptSuggestionOnEnter": "off",
+      "editor.formatOnSave": true,
+      "editor.renderWhitespace": "all",
+      "editor.wordWrap": "on",
+      "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": false
+    },
+    "[python]": {
+      "editor.fontLigatures": true,
+      "editor.formatOnSave": false,
+      "editor.insertSpaces": true,
+      "editor.renderWhitespace": "all",
+      "editor.tabSize": 2,
+      "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": true
+    },
+    "[restructuredtext]": {
+      "editor.colorDecorators": true,
+      "editor.formatOnSave": true,
+      "files.trimFinalNewlines": true,
+      "files.trimTrailingWhitespace": true
+    },
+    "[shellscript]": {
+      "editor.autoIndent": "advanced",
+      "editor.colorDecorators": true,
+      "editor.formatOnPaste": true,
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[yaml]": {
+      "editor.colorDecorators": true,
+      "editor.formatOnSave": false,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "files.trimTrailingWhitespace": true
+    },
+    "cpplint.cpplintPath" : "/cpplint",
+    "cpplint.lineLength": 80,
+    "clang-format.assumeFilename": ".clang-format",
+    "clang-format.executable" : "clang-format",
+    "clang-format.language.c.style": "Google",
+    "clang-format.language.cpp.style": "Google",
+    "clang-format.style": "Google",
+    "editor.clang-format": "Google",
+    "extensions": {
+      "recommendations": [
+        "platformio.platformio-ide",
+        "ms-vscode.cpptools",
+        "cschlosser.doxdocgen",
+        "sbenp.prettier-vscode",
+        "lextudio.restructuredtext",
+        "xaver.clang-format"
+      ]
+    },
+    "files.associations": {
+      "CMakeLists.txt": "cmake",
+      "Doxyfil*": "doxygen",
+      "cstddef": "cpp"
+    },
+    "files.insertFinalNewline": true,
+    "python.linting.enabled": true,
+    "restructuredtext.linter.executablePath": "doc8",
+    "restructuredtext.linter.run": "onSave",
+    "workbench.colorCustomizations": {
+      "editorWhitespace.foreground": "#fbff00"
+    }
+  }
+}

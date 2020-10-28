@@ -10,8 +10,6 @@
  *       -=-+#+                                                               *
  *        --                                                                  *
  *****************************************************************************/
-#include <Arduino.h>
-
 #include "main.h"
 /******************************************************************************
  *                                                                            *
@@ -21,9 +19,6 @@
  * Email:   mommel@gmx de                                                     *
  *                                                                            *
  *****************************************************************************/
-#include <Bounce2.h>
-#include <MIDI.h>
-#include <ResponsiveAnalogRead.h>
 /******************************************************************************
  *                                                                            *
  *   This program is free software; you can redistribute it and/or modify     *
@@ -54,7 +49,7 @@ const int amountOfDigitalButtonController = 14;
 const int cable = 0;
 const int ON_VELOCITY = 99;
 const int BOUNCE_TIME = 7;
-const boolean toggled = true;
+const bool toggled = true;
 
 /******************************************************************************
  * Controller - Pin Mapping                                                   *
@@ -70,6 +65,7 @@ const int controlNumbersDigital[amountOfDigitalButtonController] = {
 
 byte potiData[amountOfPotiControllerInputs];
 byte potiDataLag[amountOfPotiControllerInputs];
+
 
 ResponsiveAnalogRead analogPotiController[]{
     {potiControllerPin[0], true}, {potiControllerPin[1], true},

@@ -1,0 +1,15 @@
+{
+  "restructuredtext.builtDocumentationPath" : null,
+  // "${workspaceRoot}/../Documentation/MVP/build/html",
+  "restructuredtext.confPath"               : null,
+  // "${workspaceFolder}",
+  "restructuredtext.updateOnTextChanged"    : "true",
+  "restructuredtext.updateDelay"            : 300,
+  "restructuredtext.sphinxBuildPath"        : null,
+  "restructuredtext.linter.run"             :"onSave",
+  "restructuredtext.linter.extraArgs": [
+    "--config",
+    "${workspaceFolder}/doc8.ini"
+  ],
+  "restructuredtext.languageServer.disabled": false
+}
