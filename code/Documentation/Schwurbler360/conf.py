@@ -15,7 +15,7 @@
 #sys.path.insert(0, os.path.abspath('.'))
 import sys; sys.setrecursionlimit(2500)
 
-from sphinx.builders.html import StandaloneHTMLBuilder
+#from sphinx.builders.html import StandaloneHTMLBuilder
 import subprocess
 
 # Doxygen
