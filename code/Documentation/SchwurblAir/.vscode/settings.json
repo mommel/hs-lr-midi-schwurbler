@@ -1,0 +1,14 @@
+{
+  "restructuredtext.builtDocumentationPath": null,
+  // "${workspaceFolder}",
+  "restructuredtext.updateOnTextChanged"    : "true",
+  "restructuredtext.updateDelay"            : 300,
+  "restructuredtext.sphinxBuildPath"        : null,
+  "restructuredtext.linter.run"             :"onSave",
+  "restructuredtext.linter.extraArgs": [
+    "--config",
+    "${workspaceFolder}/doc8.ini"
+  ],
+  "restructuredtext.languageServer.disabled": false,
+  "restructuredtext.confPath": "${workspaceFolder}"
+}

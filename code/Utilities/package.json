@@ -1,0 +1,9 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Schwurbler Dev Utilities",
+  "dependencies": {
+    "clang-format": "^1.4.0",
+    "doxygen2md": "^1.0.0"
+  }
+}

@@ -2,9 +2,10 @@
 !.gitkeep
 # Ignore
 **/.DS_Store
-circuit diagram/**/*bak
+yarn-error.log
 *.sch-bak
 *.kicad_pcb-bak
+circuit diagram/**/*bak
 kicad/**/*kicad-rescue.*
 kicad/**/*-cache
 kicad/**/*cache.lib
@@ -15,4 +16,17 @@ code/*/.vscode/.browse.c_cpp.db*
 code/*/.vscode/launch.json
 code/*/.vscode/ipch
 code/*/.vscode/c_cpp_properties.json
-wiki/multilang_md.py
+code/*/.vscode/settings.json
+code/Utilities/*_modules/**
+code/Documentation/*/_build/
+code/Schwurbler.code-workspace.bak
+code/Schwurbler.code-workspace
+
+# Needs to be removed before merge into master
+code/Schwurbler360/src
+code/SchwurblAir/src
+code/MVP/lib/Bounce2
+code/MVP/lib/MIDI Library
+code/MVP/lib/ResponsiveAnalogRead
+code/Documentation/src/*MVP/Doxyfile.out
+/Schwurbler.code-workspace

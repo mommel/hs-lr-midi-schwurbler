@@ -1,7 +1,13 @@
-#ifndef _USERS_MANUELBRAUN_DOCUMENTS_SANDBOX_HS_LR_MIDI_SCHWURBLER_CODE_MVP_SRC_MAIN_H
-#define _USERS_MANUELBRAUN_DOCUMENTS_SANDBOX_HS_LR_MIDI_SCHWURBLER_CODE_MVP_SRC_MAIN_H
 
-#include <Arduino.h>
+#ifndef MVP_SRC_MAIN_H
+#define MVP_SRC_MAIN_H
+#include "Arduino.h"
+
+#include "controller/button_controller.h"
+
+#include <Bounce2.h>
+#include <MIDI.h>
+#include <ResponsiveAnalogRead.h>
 
 void sendMidiTrigger(int inControlNumber, bool isActive, int sendChannelID);
 
@@ -12,4 +18,4 @@ void getPotiData();
 
 void getButtonData();
 
-#endif  // _USERS_MANUELBRAUN_DOCUMENTS_SANDBOX_HS_LR_MIDI_SCHWURBLER_CODE_MVP_SRC_MAIN_H
+#endif  // MVP_SRC_MAIN_H
