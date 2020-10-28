@@ -16,7 +16,7 @@
 import sys; sys.setrecursionlimit(2500)
 
 from sphinx.builders.html import StandaloneHTMLBuilder
-import subprocess, os
+import subprocess
 
 # Doxygen
 subprocess.call('doxygen Doxyfile.Schwurbler360', shell=True)

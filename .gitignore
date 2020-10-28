@@ -21,12 +21,4 @@ code/Utilities/*_modules/**
 code/Documentation/*/_build/
 code/Schwurbler.code-workspace.bak
 code/Schwurbler.code-workspace
-
-# Needs to be removed before merge into master
-code/Schwurbler360/src
-code/SchwurblAir/src
-code/MVP/lib/Bounce2
-code/MVP/lib/MIDI Library
-code/MVP/lib/ResponsiveAnalogRead
-code/Documentation/src/*MVP/Doxyfile.out
-/Schwurbler.code-workspace
+multilang_md.py

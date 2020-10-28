@@ -15,7 +15,7 @@
 #sys.path.insert(0, os.path.abspath('.'))
 
 from sphinx.builders.html import StandaloneHTMLBuilder
-import subprocess, os
+import subprocess
 
 # Doxygen
 subprocess.call('doxygen Doxyfile.MVP', shell=True)
