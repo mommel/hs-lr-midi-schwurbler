@@ -39,6 +39,7 @@ Released a version and onging development for next versions
 * USB Powered
 * 10 + 4 Buttons
 * 9 Poti
+
 [BOM](https://hs-lr-midi-schwurbler.mommel.com/bom/schwurbler-mvp-1.2.ibom.html)
 
 ## Releases
