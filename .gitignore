@@ -22,3 +22,7 @@ code/Documentation/*/_build/
 code/Schwurbler.code-workspace.bak
 code/Schwurbler.code-workspace
 multilang_md.py
+**/*.ses
+**/*.dsn
+/kicad/logs
+kicad/*/schematic-positions-to-layout.debug
