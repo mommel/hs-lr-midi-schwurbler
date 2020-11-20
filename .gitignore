@@ -26,3 +26,5 @@ multilang_md.py
 **/*.dsn
 /kicad/logs
 kicad/*/schematic-positions-to-layout.debug
+/kicad/Schwurbler-360/Datasheets
+kicad/*/*rescue*
