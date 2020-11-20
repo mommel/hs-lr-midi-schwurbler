@@ -11,7 +11,7 @@ Comp "Happy Shooting Community"
 Comment1 "Inputs: 8 Button 8 Rotary Encoder, 1 Rotary Encoder w. Button"
 Comment2 "Connection: USB"
 Comment3 "MCU: Arduino Pro Micro"
-Comment4 ""
+Comment4 "SMD Version"
 $EndDescr
 Wire Wire Line
 	4500 6950 4700 6950
@@ -203,7 +203,7 @@ U 1 1 5FEE64E5
 P 4000 6600
 F 0 "R8" V 3900 6700 50  0000 R CNN
 F 1 "10k" V 4000 6700 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3930 6600 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4000 6600 50  0001 C CNN
 	1    4000 6600
 	0    1    1    0   
@@ -214,7 +214,7 @@ U 1 1 5FEE5936
 P 4400 6600
 F 0 "R12" V 4500 6700 50  0000 R CNN
 F 1 "10k" V 4400 6650 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4330 6600 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4400 6600 50  0001 C CNN
 	1    4400 6600
 	0    -1   -1   0   
@@ -325,7 +325,7 @@ U 1 1 5FFEA425
 P 4200 7050
 F 0 "RE5" H 4250 7300 50  0000 L CNN
 F 1 "Rotary_Encoder_Switch" V 4245 7280 50  0001 L CNN
-F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles" H 4050 7210 50  0001 C CNN
+F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4200 7310 50  0001 C CNN
 	1    4200 7050
 	1    0    0    -1  
@@ -336,7 +336,7 @@ U 1 1 5FB71914
 P 3500 5650
 F 0 "R2" H 3600 5500 50  0000 R CNN
 F 1 "10k" V 3500 5700 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3430 5650 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 3500 5650 50  0001 C CNN
 	1    3500 5650
 	-1   0    0    1   
@@ -347,7 +347,7 @@ U 1 1 5FB42907
 P 4600 5900
 F 0 "R14" H 4650 5750 50  0000 R CNN
 F 1 "10k" V 4600 5950 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4530 5900 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4600 5900 50  0001 C CNN
 	1    4600 5900
 	-1   0    0    1   
@@ -525,7 +525,7 @@ U 1 1 5FB71ED6
 P 3400 5900
 F 0 "R1" H 3500 5750 50  0000 R CNN
 F 1 "10k" V 3400 5950 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical" V 3330 5900 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 3400 5900 50  0001 C CNN
 	1    3400 5900
 	-1   0    0    1   
@@ -536,7 +536,7 @@ U 1 1 5FB714E1
 P 3600 5400
 F 0 "R3" H 3700 5250 50  0000 R CNN
 F 1 "10k" V 3600 5450 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3530 5400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 3600 5400 50  0001 C CNN
 	1    3600 5400
 	-1   0    0    1   
@@ -547,7 +547,7 @@ U 1 1 5FB70E0E
 P 3700 5150
 F 0 "R4" H 3750 5000 50  0000 R CNN
 F 1 "10k" V 3700 5200 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3630 5150 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 3700 5150 50  0001 C CNN
 	1    3700 5150
 	-1   0    0    1   
@@ -558,7 +558,7 @@ U 1 1 5FB709C6
 P 3800 5900
 F 0 "R5" H 3900 5750 50  0000 R CNN
 F 1 "10k" V 3800 5950 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3730 5900 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 3800 5900 50  0001 C CNN
 	1    3800 5900
 	-1   0    0    1   
@@ -569,7 +569,7 @@ U 1 1 5FB705BD
 P 3900 5650
 F 0 "R6" H 4000 5500 50  0000 R CNN
 F 1 "10k" V 3900 5700 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3830 5650 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 3900 5650 50  0001 C CNN
 	1    3900 5650
 	-1   0    0    1   
@@ -580,7 +580,7 @@ U 1 1 5FB70079
 P 4000 5400
 F 0 "R7" H 4100 5250 50  0000 R CNN
 F 1 "10k" V 4000 5450 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 3930 5400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4000 5400 50  0001 C CNN
 	1    4000 5400
 	-1   0    0    1   
@@ -591,7 +591,7 @@ U 1 1 5FB6FACC
 P 4100 5150
 F 0 "R9" H 4150 5000 50  0000 R CNN
 F 1 "10k" V 4100 5200 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4030 5150 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4100 5150 50  0001 C CNN
 	1    4100 5150
 	-1   0    0    1   
@@ -603,7 +603,7 @@ U 1 1 5FB425D0
 P 4500 5650
 F 0 "R13" H 4550 5500 50  0000 R CNN
 F 1 "10k" V 4500 5700 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4430 5650 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4500 5650 50  0001 C CNN
 	1    4500 5650
 	-1   0    0    1   
@@ -614,7 +614,7 @@ U 1 1 5FB41F27
 P 4400 5400
 F 0 "R11" H 4450 5250 50  0000 R CNN
 F 1 "10k" V 4400 5450 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4330 5400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4400 5400 50  0001 C CNN
 	1    4400 5400
 	-1   0    0    1   
@@ -625,7 +625,7 @@ U 1 1 5FB41C1A
 P 4300 5150
 F 0 "R10" H 4350 5000 50  0000 R CNN
 F 1 "10k" V 4300 5200 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4230 5150 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4300 5150 50  0001 C CNN
 	1    4300 5150
 	-1   0    0    1   
@@ -636,7 +636,7 @@ U 1 1 5FB419B5
 P 4700 5150
 F 0 "R15" H 4800 5000 50  0000 R CNN
 F 1 "10k" V 4700 5200 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4630 5150 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4700 5150 50  0001 C CNN
 	1    4700 5150
 	-1   0    0    1   
@@ -647,7 +647,7 @@ U 1 1 5FB416E7
 P 4800 5400
 F 0 "R16" H 4850 5250 50  0000 R CNN
 F 1 "10k" V 4800 5450 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4730 5400 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4800 5400 50  0001 C CNN
 	1    4800 5400
 	-1   0    0    1   
@@ -658,7 +658,7 @@ U 1 1 5FB41386
 P 4900 5650
 F 0 "R17" H 4950 5500 50  0000 R CNN
 F 1 "10k" V 4900 5700 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4830 5650 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 4900 5650 50  0001 C CNN
 	1    4900 5650
 	-1   0    0    1   
@@ -669,7 +669,7 @@ U 1 1 5FB40D5B
 P 5000 5900
 F 0 "R18" H 5050 5750 50  0000 R CNN
 F 1 "10k" V 5000 5950 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 4930 5900 50  0001 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.30x2.65mm_HandSolder" V 3330 5900 50  0001 C CNN
 F 3 "~" H 5000 5900 50  0001 C CNN
 	1    5000 5900
 	-1   0    0    1   
@@ -810,17 +810,6 @@ Wire Wire Line
 	5600 6350 6650 6350
 Wire Wire Line
 	6300 6850 6650 6850
-$Comp
-L Interface_Expansion:MCP23017_SP IC1
-U 1 1 61E1C4AA
-P 4200 3950
-F 0 "IC1" V 4100 3850 50  0000 L CNN
-F 1 "MCP23017_SP" V 4250 3850 50  0000 L CNN
-F 2 "Package_DIP:DIP-28_W7.62mm" H 4400 2950 50  0001 L CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 4400 2850 50  0001 L CNN
-	1    4200 3950
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	2500 1700 2500 3050
 Wire Wire Line
@@ -1020,4 +1009,15 @@ Text Label 900  6000 2    50   ~ 0
 RE1_CLK
 Text Label 1100 6000 0    50   ~ 0
 RE1_DT
+$Comp
+L Interface_Expansion:MCP23017_SO IC1
+U 1 1 5FB8B7A8
+P 4200 3950
+F 0 "IC1" V 4150 3850 50  0000 L CNN
+F 1 "MCP23017_SO" V 4250 3650 50  0000 L CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 4400 2950 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 4400 2850 50  0001 L CNN
+	1    4200 3950
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
