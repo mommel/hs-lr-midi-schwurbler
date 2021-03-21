@@ -30,7 +30,7 @@ html5lib==1.1
 idna==2.10
 imagesize==1.2.0
 importlib-resources==3.2.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 lazy-object-proxy==1.4.3
 livereload==2.6.3
 lockfile==0.12.2
