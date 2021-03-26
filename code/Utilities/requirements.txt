@@ -46,7 +46,7 @@ Pygments==2.7.2
 pyparsing==2.4.7
 python-slugify==4.0.1
 pytz==2020.1
-PyYAML==5.3.1
+PyYAML==5.4
 recommonmark==0.6.0
 requests==2.24.0
 requests-file==1.5.1
