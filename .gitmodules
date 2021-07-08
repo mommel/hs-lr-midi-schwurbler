@@ -1,3 +1,9 @@
 [submodule "wiki/wiki_repository"]
 	path = wiki/wiki_repository
 	url = https://github.com/mommel/hs-lr-midi-schwurbler.wiki.git
+[submodule "kicad/parts/pretty/teensy.pretty"]
+	path = kicad/parts/pretty/teensy.pretty
+	url = https://github.com/XenGi/teensy.pretty.git
+[submodule "kicad/parts/lib/teensy_library"]
+	path = kicad/parts/lib/teensy_library
+	url = https://github.com/XenGi/teensy_library.git

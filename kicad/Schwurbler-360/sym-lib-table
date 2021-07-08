@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name teensy)(type Legacy)(uri ${KIPRJMOD}/../parts/lib/teensy_library/teensy.lib)(options "")(descr ""))
+  (lib (name schwurbler-360_v1.0-rescue)(type Legacy)(uri ${KIPRJMOD}/schwurbler-360_v1.0-rescue.lib)(options "")(descr ""))
+)
