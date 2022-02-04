@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "Schwurbler360")(type "KiCad")(uri "${KIPRJMOD}/parts/symbols/Schwurbler.kicad_sym")(options "")(descr ""))
+)
