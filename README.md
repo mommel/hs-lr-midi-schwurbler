@@ -34,7 +34,7 @@ Released a version and onging development for next versions
  *To be found soonish in the Wiki*
 
 ## Versions
-### MVP 
+### MVP
 * based on Teensy 32bit boards
 * USB Powered
 * 10 + 4 Buttons
@@ -48,9 +48,9 @@ Released a version and onging development for next versions
 ## Help needed? F.A.Q.
 * For support you can open an issue here on github.
 * Maybe there will be a slack contact in the future.
-* This project is a Happy Shooting _Community_ Project. 
+* This project is a Happy Shooting _Community_ Project.
 The best way to get help is joining the #der-schwurbler channel on the happyshooting slack. The community will do it's best and hopefully solve your issue.
-* No hotline, no helpdesk. But we have something even greater: The Happy Shooting _Community_.    
+* No hotline, no helpdesk. But we have something even greater: The Happy Shooting _Community_.
 
 ## How to contribute
 * Fork, add, push, create a pull request
@@ -74,8 +74,20 @@ Mommel https://github.com/mommel
 Vielpixel https://github.com/Vielpixel
 wolfgangSF https://github.com/wolfgangSF
 
-### 3rd Party
-Tools or Assets from 3rd party have their own LICENSE attached to their folder
+# 3rd party licenses
+External work have their own licenses and are covered or even touched by owner license.
+
+## assets/SolderComics
+* FullSolderComic_EN.pdf is licensed as https://creativecommons.org/licenses/by-sa/3.0 by Mitch Altmann, Andie Nordgren and Jeff Keyzer
+* DE_SolderComic.pdf is licensed as https://creativecommons.org/licenses/by-sa/3.0 by Mitch Altmann, Andie Nordgren, Jeff Keyzer, Alexander Bodora and Richard Meinsen
+
+## kicad/parts
+### pretty _footprints_
+_as submodule_
+* XenGi_teensy.pretty is licensed under the MIT License by Ricardo Band
+### lib _libraries_
+_as submodule_
+* XenGi_teensy_library is licensed under the MIT License by Ricardo Band
 
 ## Disclaimer
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
